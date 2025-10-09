@@ -1,0 +1,23 @@
+<!-- SVG Placeholder für Join Project -->
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#1F2937"/>
+  <rect x="20" y="20" width="460" height="40" fill="#02F4BF" rx="4"/>
+  <text x="250" y="45" text-anchor="middle" fill="#0B042D" font-family="Arial" font-size="18" font-weight="bold">JOIN - Task Manager</text>
+  
+  <!-- Kanban Columns -->
+  <rect x="30" y="80" width="130" height="180" fill="#374151" rx="8"/>
+  <rect x="180" y="80" width="130" height="180" fill="#374151" rx="8"/>
+  <rect x="330" y="80" width="130" height="180" fill="#374151" rx="8"/>
+  
+  <!-- Column Headers -->
+  <text x="95" y="105" text-anchor="middle" fill="#02F4BF" font-family="Arial" font-size="14" font-weight="bold">To Do</text>
+  <text x="245" y="105" text-anchor="middle" fill="#02F4BF" font-family="Arial" font-size="14" font-weight="bold">In Progress</text>
+  <text x="395" y="105" text-anchor="middle" fill="#02F4BF" font-family="Arial" font-size="14" font-weight="bold">Done</text>
+  
+  <!-- Task Cards -->
+  <rect x="40" y="120" width="110" height="30" fill="#02F4BF" rx="4"/>
+  <rect x="40" y="160" width="110" height="30" fill="#02F4BF" rx="4"/>
+  <rect x="190" y="120" width="110" height="30" fill="#E15544" rx="4"/>
+  <rect x="340" y="120" width="110" height="30" fill="#02F4BF" rx="4"/>
+  <rect x="340" y="160" width="110" height="30" fill="#02F4BF" rx="4"/>
+</svg>

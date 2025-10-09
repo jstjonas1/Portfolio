@@ -1,0 +1,458 @@
+/* Global Responsive Styles - Mobile First Approach */
+
+// Breakpoint Variables
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1440px;
+
+// Import Google Fonts
+.text-small {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  color: var(--color-green);
+  
+  @media (min-width: $large-desktop) {
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+// Typography Mixins
+@mixin heading-h2 {
+  font-family: 'Handjet', cursive;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  
+  @media (min-width: $tablet) {
+    font-size: 48px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    font-size: 64px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Handjet:wght@400&family=Poppins:wght@400&display=swap');
+
+// Color Variables
+:root {
+  --color-red: #E15544;
+  --color-green: #02F4BF;
+  --color-purple-dark: #0B042D;
+  --color-purple-light: #1F0B80;
+  --color-purple-medium: #1E0A7D;
+  --color-purple-accent: #241085;
+  --color-grey-inactive: #BEBEBE;
+  --color-grey-border: #827B7B;
+  --color-purple-2: #797EF3;
+  --color-dark-bg: #140754;
+}
+
+// Breakpoints
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1440px;
+
+// Global Reset and Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Roboto Mono', monospace;
+  
+  // Mobile first background
+  background: linear-gradient(174.25deg, #0B042D 24.9%, #1F0B80 39.2%, #0B042F 72.02%, #241085 106.54%);
+  color: var(--color-green);
+  overflow-x: hidden;
+  
+  @media (min-width: $large-desktop) {
+    width: $large-desktop;
+    margin: 0 auto;
+  }
+}
+
+// Typography Classes - Exakt nach Figma
+.hero-name {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: var(--color-green);
+  
+  @media (min-width: $tablet) {
+    font-size: 48px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    font-size: 54px;
+  }
+}
+
+.hero-title {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--color-green);
+  
+  @media (min-width: $large-desktop) {
+    font-size: 32px;
+  }
+}
+
+.section-headline {
+  font-family: 'Handjet', cursive;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--color-red);
+  
+  @media (min-width: $tablet) {
+    font-size: 48px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    font-size: 64px;
+  }
+}
+
+.project-title {
+  font-family: 'Handjet', cursive;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--color-red);
+}
+
+.text-body {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--color-green);
+  
+  @media (min-width: $large-desktop) {
+    font-size: 18px;
+  }
+}
+
+.text-body-alt {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--color-green);
+  
+  @media (min-width: $large-desktop) {
+    font-size: 18px;
+  }
+}
+
+.text-small {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  color: var(--color-green);
+  
+  @media (min-width: $large-desktop) {
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+.tech-tag {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+}
+
+// Button Styles - Exakt nach Figma
+.btn-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  background: var(--color-green);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--color-purple-dark);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 8px 0px rgba(2, 244, 191, 0.2);
+  min-height: 48px;
+  
+  &:hover {
+    background: rgba(2, 244, 191, 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 12px 0px rgba(2, 244, 191, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0px 2px 6px 0px rgba(2, 244, 191, 0.4);
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 15px 32px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--color-green);
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--color-green);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-height: 48px;
+  
+  &:hover {
+    background: rgba(2, 244, 191, 0.1);
+    border-color: var(--color-red);
+    color: var(--color-red);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    background: rgba(2, 244, 191, 0.05);
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 15px 32px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--color-red);
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--color-red);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-height: 48px;
+  
+  &:hover {
+    background: var(--color-red);
+    color: var(--color-white);
+    transform: translateY(-1px);
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 15px 32px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+.btn-inactive {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--color-grey-inactive);
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--color-grey-inactive);
+  cursor: not-allowed;
+  opacity: 0.6;
+  min-height: 48px;
+  
+  @media (min-width: $large-desktop) {
+    padding: 15px 32px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+// Container and Layout Classes - Exakt nach Figma
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @media (min-width: $tablet) {
+    padding: 0 40px;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: 0 80px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 0 120px;
+  }
+}
+
+.section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  
+  @media (min-width: $tablet) {
+    padding: 100px 40px;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: 100px 80px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 100px 120px;
+  }
+}
+
+.section-spacing {
+  margin-bottom: 80px;
+  
+  @media (min-width: $tablet) {
+    margin-bottom: 100px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    margin-bottom: 120px;
+  }
+}
+
+// Card Component - Figma Style
+.card {
+  background: var(--color-purple-dark);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0px 4px 24px 0px rgba(2, 244, 191, 0.10);
+  border: 1px solid rgba(2, 244, 191, 0.1);
+  
+  @media (min-width: $desktop) {
+    padding: 32px;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: 40px;
+  }
+}
+
+// Form Styles
+.form-input {
+  width: 100%;
+  padding: 15px;
+  border: 1.5px solid var(--color-green);
+  background: transparent;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  color: var(--color-green);
+  
+  &::placeholder {
+    color: var(--color-green);
+    opacity: 0.6;
+  }
+  
+  @media (min-width: $large-desktop) {
+    font-size: 18px;
+  }
+}
+
+// Utility Classes
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.justify-center { justify-content: center; }
+.align-center { align-items: center; }
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+
+.gap-8 { gap: 8px; }
+.gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+.gap-48 { gap: 48px; }
+
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-48 { margin-bottom: 48px; }
+
+// Hide/Show classes for responsive design
+.mobile-only {
+  display: block;
+  
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+  
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
+
+// Main app container
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}

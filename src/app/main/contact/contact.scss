@@ -1,0 +1,414 @@
+@use '../../../styles/tokens' as *;
+
+// Screen reader only utility class
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Contact Section - Version 1 Clean Design
+.contact-section {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 40px $spacing-lg; // Mobile: Reduziert auf 40px
+  background: transparent;
+
+  @media (min-width: $desktop) {
+    padding: $spacing-100 $spacing-120;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Überschrift oben - Figma Spezifikationen
+  h2 {
+    font-family: $font-primary; // Roboto Mono wie in Figma
+    font-style: normal;
+    font-weight: 500; // Wie in Figma
+    font-size: 32px; // Mobile
+    line-height: 120%; // Wie in Figma
+    color: var(--color-red);
+    text-align: left;
+    margin-bottom: $spacing-lg;
+    
+    @media (min-width: $tablet) {
+      font-size: 42px;
+    }
+    
+    @media (min-width: $desktop) {
+      font-size: 54px; // Wie in Figma "Contact me Headline"
+    }
+  }
+
+  // Content-Bereich: Text links (bis 50%), Kontakt rechts (ab 50%)
+  .contact-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xxl;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+      align-items: flex-start; // Beide auf gleicher Höhe starten
+      gap: 0; // Kein Gap zwischen den Bereichen
+    }
+
+    .contact-text-area {
+      flex: 1;
+
+      @media (min-width: $desktop) {
+        width: 50%; // Text nimmt genau 50% der Breite ein
+        max-width: 50%;
+      }
+
+      .contact-intro {
+        font-family: $font-primary; // Roboto Mono
+        font-style: normal;
+        font-weight: 400; // Normal wie in Figma
+        font-size: 16px; // Mobile
+        line-height: 120%; // Wie in Figma
+        color: var(--color-green);
+        text-align: justify; // Wie in Figma
+        margin: 0;
+        
+        @media (min-width: $tablet) {
+          font-size: 17px;
+        }
+        
+        @media (min-width: $desktop) {
+          font-size: 18px; // Wie in Figma "Contact me Text"
+        }
+      }
+    }
+
+    .contact-info-area {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      align-items: flex-start; // Linksbündig ausgerichtet
+
+      @media (min-width: $desktop) {
+        width: 50%; // Kontaktinfo nimmt die anderen 50% ein
+        padding-left: $spacing-lg; // Kleiner Abstand vom Text
+      }
+
+      @media (max-width: 1023px) {
+        align-items: center;
+        margin-top: $spacing-lg;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center; // Icon und Text auf gleicher Höhe in einer Zeile
+        gap: $spacing-md;
+
+        .contact-icon-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(225, 85, 68, 0.1);
+          border-radius: 0; // Figma zeigt eckige Icon-Hintergründe
+          flex-shrink: 0;
+
+          .contact-icon {
+            color: var(--color-red);
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .contact-text {
+          display: flex;
+          flex-direction: row; // Label und Link in einer Zeile
+          align-items: center;
+          gap: $spacing-sm;
+
+          .contact-label {
+            font-family: $font-primary; // Roboto Mono
+            font-style: normal;
+            font-weight: 500; // Wie in Figma
+            font-size: 14px; // Mobile
+            
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 120%;
+            
+            @media (min-width: $desktop) {
+              font-size: 16px;
+            }
+          }
+
+          .contact-link {
+            color: var(--color-green);
+            text-decoration: none;
+            font-family: $font-primary; // Roboto Mono
+            font-style: normal;
+            font-weight: 500; // Wie in Figma
+            font-size: 18px; // Mobile
+            line-height: 120%; // Wie in Figma
+            transition: all 0.2s ease;
+
+            @media (min-width: $desktop) {
+              font-size: 20px; // Wie in Figma "Contact info"
+            }
+
+            &:hover,
+            &:focus {
+              color: var(--color-red);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Contact Form - Version 1 Clean Design
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+
+  .form-fields {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    input, textarea {
+      background: transparent;
+      border: 1.5px solid var(--color-green); // Wie in Figma "border: 1.5px solid"
+      border-radius: 0; // Figma zeigt eckige Rahmen ohne border-radius
+      padding: $spacing-md $spacing-lg;
+      font-family: $font-primary; // Roboto Mono
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px; // Mobile
+      line-height: 120%; // Wie in Figma
+      color: var(--color-green);
+      transition: all 0.2s ease;
+      
+      &::placeholder {
+        color: rgba(2, 244, 191, 0.6);
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-red);
+        box-shadow: 0 0 0 2px rgba(225, 85, 68, 0.2);
+        transform: translateY(-1px);
+      }
+
+      &.error {
+        border-color: var(--color-red);
+        box-shadow: 0 0 0 2px rgba(225, 85, 68, 0.1);
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 18px; // Größer für Desktop
+        padding: $spacing-lg $spacing-xl;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: $line-height-normal;
+      font-family: $font-primary;
+
+      @media (min-width: $desktop) {
+        min-height: 180px;
+      }
+    }
+
+    .error-message {
+      margin-top: $spacing-xs;
+      font-family: $font-primary;
+      font-size: $font-size-small;
+      color: var(--color-red);
+      line-height: $line-height-tight;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+      gap: $spacing-xl;
+      align-items: flex-start;
+    }
+
+    .form-left {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+
+      @media (min-width: $desktop) {
+        flex: 1;
+      }
+    }
+
+    .form-right {
+      @media (min-width: $desktop) {
+        flex: 1;
+      }
+
+      .form-group {
+        textarea {
+          @media (min-width: $desktop) {
+            min-height: 200px; // Höher um mit den beiden linken Feldern zu matchen
+          }
+        }
+      }
+    }
+  }
+
+  .privacy-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+
+    input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: var(--color-green);
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &.error {
+        outline: 2px solid var(--color-red);
+        outline-offset: 2px;
+      }
+    }
+
+    label {
+      font-family: $font-primary; // Roboto Mono
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px; // Mobile
+      line-height: 120%; // Wie in Figma
+      color: var(--color-green);
+      cursor: pointer;
+
+      @media (min-width: $desktop) {
+        font-size: 14px; // Wie in Figma "Privacy policy text"
+      }
+    }
+
+    .error-message {
+      margin-top: $spacing-xs;
+      margin-left: 28px; // Account for checkbox width + gap
+      font-family: $font-primary;
+      font-size: $font-size-small;
+      color: var(--color-red);
+      line-height: $line-height-tight;
+    }
+  }
+
+  .btn-primary {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    padding: 15px 30px; // Wie in Figma "padding: 15px 30px"
+    background: var(--color-red);
+    color: var(--color-white);
+    border: 1.5px solid var(--color-red); // Gleiche Border-Stärke wie Input-Felder
+    border-radius: 0; // Figma zeigt eckige Rahmen ohne border-radius
+    font-family: $font-primary; // Roboto Mono
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px; // Mobile
+    line-height: 120%; // Wie in Figma
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: $spacing-lg;
+    min-width: 160px;
+    
+    @media (min-width: $desktop) {
+      font-size: 18px; // Größer für Desktop
+    }
+
+    &:hover:not(:disabled) {
+      background: transparent;
+      color: var(--color-red);
+      border: 1.5px solid var(--color-red); // Konsistente Border-Stärke
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(225, 85, 68, 0.3);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(225, 85, 68, 0.3);
+    }
+    
+    &:disabled {
+      background: var(--color-grey-inactive);
+      border-color: var(--color-grey-inactive);
+      color: var(--color-white);
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .loading {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: $font-size-body;
+      padding: $spacing-lg $spacing-xxl;
+      min-width: 200px;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

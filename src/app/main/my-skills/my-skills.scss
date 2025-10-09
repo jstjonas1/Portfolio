@@ -1,0 +1,382 @@
+@use '../../../styles/tokens' as *;
+
+// My Skills Section - Figma Exact Styling
+.my-skills {
+  padding: 40px 20px; // Mobile: Max 40px zwischen Sections
+  background: transparent;
+  
+  @media (min-width: $desktop) {
+    padding: $section-padding;
+  }
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 0 26px; // Mobile: Side padding für Zentrierung
+    
+    @media (min-width: $desktop) {
+      padding: 0;
+    }
+  }
+  
+  // Section Title
+  .section-title {
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    color: #E15544;
+    text-align: center;
+    margin-bottom: 32px; // Mobile: Reduziert auf 32px
+    
+    @media (min-width: $desktop) {
+      font-size: 54px;
+      margin-bottom: $spacing-64;
+    }
+  }
+  
+  // Skills Grid - Figma Layout
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; // Mobile: Kleinerer gap für mehr Platz
+    margin-bottom: 24px; // Mobile: Weniger Abstand zum Challenge-Text
+    justify-items: center; // Mobile: Skills zentrieren
+    width: 100%;
+    max-width: 100%;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-32;
+      margin-bottom: $spacing-64;
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: $spacing-40;
+    }
+    
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: $spacing-48;
+    }
+  }
+
+  // Challenge Text - Mobile Only (unter dem Grid)
+  .mobile-challenge-text {
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #02F4BF;
+    margin-bottom: 20px; // Mobile: Reduziert
+    padding: 0 26px;
+    
+    @media (min-width: 768px) {
+      display: none; // Nur mobile sichtbar
+    }
+  }
+
+  // Let's Talk Button - Mobile Only
+  .mobile-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 32px; // Mobile: Reduziert auf 32px
+    padding: 0 26px;
+    
+    @media (min-width: 768px) {
+      display: none; // Nur mobile sichtbar
+    }
+  }
+
+  .mobile-lets-talk-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 10px;
+    width: 137px;
+    height: 43px;
+    background: #02F4BF;
+    border: none;
+    border-radius: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #0B042D;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      background: transparent;
+      border: 1px solid #02F4BF;
+      border-radius: 0;
+      color: #02F4BF;
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 8px rgba(2, 244, 191, 0.3);
+    }
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; // Mobile: Kleinerer gap
+    padding: 8px; // Mobile: Kleineres padding
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    max-width: 100%;
+    
+    @media (min-width: 768px) {
+      gap: $spacing-12;
+      padding: $spacing-16;
+    }
+    
+    &:hover {
+      transform: translateY(-4px);
+      
+      .skill-icon {
+        transform: scale(1.1);
+        box-shadow: 0px 12px 24px rgba(2, 244, 191, 0.3);
+      }
+    }
+    
+    &.challenge-item {
+      &:hover {
+        @media (min-width: 768px) {
+          .challenge-hover-text {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            left: calc(100% + 16px);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Roboto Mono', monospace;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 140%;
+            text-align: left;
+            color: #02F4BF;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
+          }
+        }
+        
+        @media (min-width: $desktop) {
+          .challenge-hover-text {
+            font-size: 18px;
+            left: calc(100% + 24px);
+          }
+        }
+      }
+      .skill-icon {
+        background: linear-gradient(135deg, var(--color-green) 0%, var(--color-red) 100%);
+        border: 2px solid transparent;
+        color: var(--color-white);
+        position: relative;
+        
+        &::before {
+          background: linear-gradient(135deg, var(--color-red) 0%, var(--color-green) 100%);
+        }
+        
+        &:hover {
+          background: linear-gradient(135deg, var(--color-red) 0%, var(--color-green) 100%);
+          transform: rotate(180deg);
+          
+          svg {
+            transform: rotate(-180deg);
+          }
+        }
+        
+        svg {
+          width: 28px;
+          height: 28px;
+          z-index: 1;
+          position: relative;
+        }
+        
+        @media (min-width: 768px) {
+          svg {
+            width: 32px;
+            height: 32px;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          svg {
+            width: 36px;
+            height: 36px;
+          }
+        }
+      }
+    }
+
+    .skill-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      svg {
+        width: 32px;
+        height: 32px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      @media (min-width: 768px) { 
+        width: 72px; 
+        height: 72px; 
+        svg { width: 36px; height: 36px; }
+      }
+      @media (min-width: 1024px) { 
+        width: 80px; 
+        height: 80px; 
+        svg { width: 40px; height: 40px; }
+      }
+    }
+
+    .skill-name {
+      display: none; // Mobile: Kein Text unter Icons
+      
+      @media (min-width: 768px) {
+        display: block;
+        font-family: 'Roboto Mono', monospace;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: #02F4BF;
+      }
+      
+      @media (min-width: $desktop) {
+        font-size: 18px;
+      }
+    }
+
+    .challenge-hover-text {
+      display: none; // Versteckt in skill-item
+    }
+  }
+  
+  // Challenge Section
+  .challenge-section {
+    margin-top: $spacing-64;
+    padding: $spacing-40;
+    background: linear-gradient(135deg, rgba(2, 244, 191, 0.05) 0%, rgba(225, 85, 68, 0.05) 100%);
+    border-radius: $border-radius-lg;
+    border: 1px solid rgba(2, 244, 191, 0.2);
+    box-shadow: $shadow-card;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(2, 244, 191, 0.1), transparent);
+      animation: shine 3s infinite;
+    }
+    
+    @media (max-width: 767px) { margin-top: $spacing-48; padding: $spacing-32; }
+    @media (min-width: 1024px) { padding: $spacing-64; }
+  }
+
+  .challenge-text {
+    margin-bottom: $spacing-32;
+    position: relative;
+    z-index: 1;
+
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-light-grey);
+      margin: 0 auto;
+      max-width: 500px;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 600px;
+      }
+      
+      @media (min-width: 1024px) {
+        font-size: 20px;
+        max-width: 700px;
+      }
+    }
+  }
+  
+  .challenge-button {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
+    .btn-primary {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--color-green) 0%, var(--color-red) 100%);
+      color: var(--color-white);
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 4px 12px rgba(2, 244, 191, 0.3);
+      
+      &:hover {
+        background: linear-gradient(135deg, var(--color-red) 0%, var(--color-green) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0px 8px 20px rgba(2, 244, 191, 0.4);
+      }
+      
+      @media (min-width: 768px) {
+        font-size: 18px;
+        padding: 16px 40px;
+      }
+    }
+  }
+  
+  // Shine animation
+  @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+}

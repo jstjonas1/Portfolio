@@ -1,0 +1,129 @@
+// Design Tokens - Exakt nach Figma Portfolio Vorlage
+
+// Breakpoints (exakt nach Figma)
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1440px;
+
+// Colors - Präzise Figma Palette
+:root {
+  --color-red: #E15544; 
+  --color-green: #02F4BF;
+  --color-purple-dark: #0B042D;
+  --color-purple-light: #1F0B80;
+  --color-purple-medium: #1E0A7D;
+  --color-purple-accent: #241085;
+  --color-grey-inactive: #BEBEBE;
+  --color-grey-border: #827B7B;
+  --color-purple-2: #797EF3;
+  --color-dark-bg: #140754;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-dark-grey: #1A1A1A;
+  --color-light-grey: #CCCCCC;
+  
+  // Gradient Backgrounds
+  --gradient-main: linear-gradient(174.25deg, #0B042D 24.9%, #1F0B80 39.2%, #0B042F 72.02%, #241085 106.54%);
+  --gradient-header: linear-gradient(180deg, #0B042D 63.5%, rgba(11, 4, 45, 0.2) 118.69%);
+}
+
+// Typography - Exakte Figma Font-System
+$font-primary: 'Roboto Mono', monospace;
+$font-headline: 'Handjet', cursive;
+$font-alt: 'Poppins', sans-serif;
+
+// Font Sizes - Pixel-perfekt nach Figma
+$font-size-hero-name: 54px;        // Hero Name Desktop
+$font-size-hero-title: 32px;       // Hero Job Title Desktop
+$font-size-h1: 64px;              // Section Headlines Desktop
+$font-size-h2: 48px;              // Section Headlines Tablet
+$font-size-h3: 32px;              // Section Headlines Mobile
+$font-size-project-title: 24px;    // Project Titles
+$font-size-body: 18px;            // Body Text Desktop
+$font-size-body-mobile: 16px;     // Body Text Mobile
+$font-size-small: 14px;           // Small Text
+$font-size-tiny: 12px;            // Tech Tags, Labels
+
+// Line Heights - Figma Typography Settings
+$line-height-tight: 120%;
+$line-height-normal: 140%;
+$line-height-relaxed: 160%;
+
+// Letter Spacing
+$letter-spacing-wide: 0.05em;
+$letter-spacing-normal: 0;
+
+// Spacing System - Exakte Figma Abstände
+$spacing-2: 2px;
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-12: 12px;
+$spacing-16: 16px;
+$spacing-20: 20px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-40: 40px;
+$spacing-48: 48px;
+$spacing-64: 64px;
+$spacing-80: 80px;
+$spacing-100: 100px;
+$spacing-120: 120px;
+
+// Alias für häufig verwendete Abstände
+$spacing-xs: $spacing-8;
+$spacing-sm: $spacing-16;
+$spacing-md: $spacing-24;
+$spacing-lg: $spacing-32;
+$spacing-xl: $spacing-48;
+$spacing-xxl: $spacing-80;
+
+// Section Padding - Responsive
+$section-padding: $spacing-80 $spacing-20;
+
+// Border Radius - Figma Radius System
+$border-radius-small: 8px;
+$border-radius-sm: 8px;
+$border-radius: 24px;
+$border-radius-lg: 32px;
+$border-radius-large: 32px;
+$border-radius-pill: 9999px;
+
+:root {
+  --border-radius: #{$border-radius};
+  --border-radius-small: #{$border-radius-small};
+}
+
+// Shadows - Figma Drop Shadows
+$shadow-card: 0px 4px 24px 0px rgba(2, 244, 191, 0.10);
+$shadow-image: 0px 8px 32px 0px rgba(0, 0, 0, 0.25);
+$shadow-button: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+$shadow-header: 0px 4px 12px 0px rgba(11, 4, 45, 0.25);
+
+// Container & Layout
+$container-max-width: 1440px;
+$section-padding-mobile: $spacing-80 $spacing-20;
+$section-padding-tablet: $spacing-100 $spacing-40;
+$section-padding-desktop: $spacing-100 $spacing-120;
+
+// Component Sizes - Figma Komponenten
+$button-height-small: 40px;
+$button-height-medium: 48px;
+$button-height-large: 56px;
+
+$skill-icon-size-mobile: 60px;
+$skill-icon-size-desktop: 70px;
+
+$header-height-mobile: 72px;
+$header-height-desktop: 92px;
+
+// Typography Mixins
+@mixin heading-h2 {
+  font-family: 'Handjet', cursive;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  
+  @media (min-width: $tablet) { font-size: 48px; }
+  @media (min-width: $large-desktop) { font-size: 64px; }
+}

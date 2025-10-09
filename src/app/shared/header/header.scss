@@ -1,0 +1,56 @@
+@use '../../../styles/tokens' as *;
+
+.header {
+  // Menu bar
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  gap: $spacing-lg;
+  
+  // Version 1/Gradient menu bar
+  background: linear-gradient(180deg, var(--color-purple-dark) 63.5%, rgba(11, 4, 45, 0.2) 118.69%);
+  box-shadow: $shadow-card;
+  border-radius: $border-radius;
+  
+  // Language Toggle im Header nur auf Desktop anzeigen
+  app-language {
+    display: none; // Versteckt auf Mobile
+    
+    @media (min-width: 768px) {
+      display: block; // Anzeigen ab Tablet
+    }
+  }
+  
+  // Mobile first - responsive breakpoints
+  @media (min-width: $tablet) {
+    padding: $spacing-lg $spacing-xl;
+    gap: $spacing-xl;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: $spacing-xl 80px;
+    gap: $spacing-xxl;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: $spacing-xl 140px;
+    gap: $spacing-xxl;
+    height: 92px;
+  }
+  
+  // For smaller mobile devices
+  @media (max-width: 480px) {
+    padding: $spacing-sm $spacing-md;
+    gap: $spacing-md;
+    
+    // Stack vertically on very small screens if needed
+    &.mobile-stacked {
+      flex-direction: column;
+      position: relative;
+      padding: $spacing-md;
+      height: auto;
+    }
+  }
+}

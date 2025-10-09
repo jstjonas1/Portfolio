@@ -1,0 +1,247 @@
+@use '../../../styles/tokens' as *;
+
+// References Section
+.refs-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 26px 40px; // Mobile: Reduziert auf 40px
+  gap: 8px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: transparent;
+
+  @media (min-width: $desktop) {
+    padding: $spacing-80 $spacing-80;
+    gap: 48px;
+  }
+
+  .refs-headline {
+    // Mobile: Headline + Text
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #E15544;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+      font-weight: 400;
+      text-align: left;
+      max-width: 1200px;
+      align-self: flex-start;
+    }
+  }
+}
+
+.references-container {
+  // Mobile: Horizontal scroll layout
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 25px 0 25px;
+  gap: 16px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Firefox
+  
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+  
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: visible;
+    padding: 0;
+  }
+}
+
+.arrow-decoration {
+  display: none;
+  
+  @media (min-width: $desktop) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 60px;
+    height: 150px;
+    transform: rotate(-10deg);
+    flex: none;
+    flex-shrink: 0;
+    padding-top: 20px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.reference-item {
+  // Mobile: References mobile card
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 10px 16px;
+  gap: 16px;
+  width: 239px;
+  min-width: 239px;
+  height: 233px;
+  border: 1px solid #02F4BF;
+  flex-shrink: 0;
+  
+  @media (min-width: $desktop) {
+    width: 320px;
+    min-width: auto;
+    height: auto;
+    border: none;
+    padding: 0;
+    align-items: flex-start;
+  }
+}
+
+.reference-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 4px;
+  width: 100%;
+  
+  @media (min-width: $desktop) {
+    align-items: flex-start;
+  }
+}
+
+.reference-name {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: #E15544;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  
+  @media (min-width: $desktop) {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+.reference-role {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #02F4BF;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  
+  @media (min-width: $desktop) {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+.reference-quote {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #02F4BF;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  
+  @media (min-width: $desktop) {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: left;
+  }
+}
+
+// Desktop Layout
+.desktop-layout {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+
+    .refs-section {
+      position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 100px 120px;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 80px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 80px;
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .testimonial-item {
+        background: rgba(2, 244, 191, 0.05);
+        border: 1px solid var(--color-green);
+        border-radius: 16px;
+        padding: var(--spacing-lg);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(2, 244, 191, 0.2);
+        }
+
+        .testimonial-content {
+          h3 {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+          }
+
+          .role {
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+          }
+
+          .quote {
+            font-size: 16px;
+            line-height: 150%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hide mobile on desktop
+@media (min-width: 1024px) {
+  .mobile-layout {
+    display: none;
+  }
+}

@@ -1,0 +1,280 @@
+@use '../../../styles/tokens' as *;
+
+// My Projects Section - Figma Exact Styling
+.my-projects {
+  padding: 40px $spacing-20; // Mobile: Reduziert auf 40px
+  background: transparent;
+  
+  @media (min-width: 768px) {
+    padding: $spacing-100 $spacing-40;
+  }
+  
+  @media (min-width: $desktop) {
+    padding: $spacing-120 $spacing-80;
+  }
+  
+  .container {
+    max-width: 1178px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  
+  // Section Title - Figma H2
+  .section-title {
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    color: #E15544;
+    text-align: center;
+    margin-bottom: 32px; // Mobile: Reduziert auf 32px
+    
+    @media (min-width: $desktop) {
+      font-size: 54px;
+      margin-bottom: $spacing-64;
+    }
+  }
+  
+  // Projects Grid
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-64;
+    
+    @media (min-width: $desktop) {
+      gap: 105px; // Space between projects in Figma
+    }
+  }
+}
+
+// Individual Project Item - Figma Layout
+.project-item {
+  position: relative;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  
+  // Mobile Layout (default)
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-24;
+    
+    @media (min-width: $desktop) {
+      position: relative;
+      height: 371px;
+      width: 100%;
+      max-width: 1134px;
+      margin: 0 auto;
+    }
+  }
+
+  .project-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      
+      @media (min-width: 768px) {
+        height: 280px;
+      }
+      
+      @media (min-width: $desktop) {
+        width: 588px;
+        height: 371px;
+        object-fit: cover;
+      }
+    }
+    
+    // Figma overlay gradient
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(217, 217, 217, 0.05) 0%, rgba(29, 10, 121, 0.2) 97.5%);
+      pointer-events: none;
+    }
+    
+    @media (min-width: $desktop) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 588px;
+      height: 371px;
+    }
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-24;
+    
+    @media (min-width: $desktop) {
+      position: absolute;
+      width: 498px;
+      left: 636px;
+      top: 27px;
+      gap: 40px;
+    }
+    
+    .headline-technologies {
+      // Figma: Headline + technologies container
+      position: relative;
+      width: 100%;
+      
+      @media (min-width: $desktop) {
+        width: 498px;
+        height: 103px;
+      }
+    }
+    
+    .project-title {
+      // Figma H3
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: #02F4BF;
+      margin: 0 0 $spacing-12 0;
+      
+      @media (min-width: $desktop) {
+        font-size: 48px;
+        margin: 0;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+      }
+    }
+
+    .tech-stack {
+      // Figma: Angular | TypeScript | HTML | CSS | Firebase
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #02F4BF;
+      margin: 0;
+      
+      @media (min-width: $desktop) {
+        font-size: 18px;
+        position: absolute;
+        left: 3px;
+        top: 78px;
+      }
+    }
+
+    .project-description {
+      // Figma description
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #02F4BF;
+      margin: 0;
+      
+      @media (min-width: $desktop) {
+        font-size: 18px;
+        width: 492px;
+      }
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      .btn-link {
+        // Button Primary Web - Figma
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 30px;
+        height: 52px;
+        background: #02F4BF;
+        border: none;
+        font-family: 'Roboto Mono', monospace;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: #0B042D;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        white-space: nowrap;
+        
+        &:hover {
+          background: transparent;
+          border: 1px solid #02F4BF;
+          color: #02F4BF;
+          transform: translateY(-2px);
+          box-shadow: 0px 4px 8px rgba(2, 244, 191, 0.3);
+        }
+        
+        // Button Secondary WEB - Figma
+        &.btn-secondary {
+          background: transparent;
+          border: 1px solid #02F4BF;
+          color: #E15544;
+          
+          &:hover {
+            background: #02F4BF;
+            color: #0B042D;
+            border-color: #02F4BF;
+          }
+        }
+      }
+    }
+  }
+  
+  // Alternating layout for desktop - Sharkie (even items)
+  &:nth-child(even) {
+    @media (min-width: $desktop) {
+      .project-image {
+        left: 546px; // Bild rechts verschoben (Figma: left: 546px)
+        right: auto;
+      }
+      
+      .project-info {
+        left: 0; // Text links (Figma: left: 0px)
+        right: auto;
+        align-items: flex-end; // Rechtsbündig ausgerichtet
+        
+        .headline-technologies {
+          text-align: right; // Container rechtsbündig
+        }
+        
+        .project-title,
+        .tech-stack,
+        .project-description {
+          text-align: right; // Text rechtsbündig
+        }
+        
+        .project-title {
+          left: auto;
+          right: 2px; // Von links nach rechts gespiegelt
+        }
+        
+        .tech-stack {
+          left: auto;
+          right: 3px; // Von links nach rechts gespiegelt
+        }
+        
+        .project-actions {
+          justify-content: flex-end; // Buttons rechts
+        }
+      }
+    }
+  }
+}

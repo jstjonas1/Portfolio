@@ -1,0 +1,52 @@
+// App Main Layout - Ensures proper section spacing
+main {
+  display: block;
+  
+  // Ensure all sections are properly spaced
+  app-hero,
+  app-why-me,
+  app-my-skills,
+  app-my-projects,
+  app-refs,
+  app-contact {
+    display: block;
+    width: 100%;
+    
+    // Add consistent spacing between sections
+    &:not(:last-child) {
+      margin-bottom: 80px;
+      
+      @media (min-width: 1024px) {
+        margin-bottom: 120px;
+      }
+    }
+  }
+  
+  // Hero section should not have top margin
+  app-hero {
+    margin-top: 0;
+  }
+}
+
+// Development Health Check Controls
+.health-check-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  opacity: 0.7;
+  
+  button {
+    background: var(--color-green);
+    color: var(--color-purple-dark);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

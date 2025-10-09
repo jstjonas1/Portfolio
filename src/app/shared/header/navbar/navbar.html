@@ -1,0 +1,44 @@
+<nav class="menu-system">
+  <div class="menu-item">
+    <a href="#why-me" class="menu-link">Why me</a>
+  </div>
+  <div class="menu-item">
+    <a href="#skills" class="menu-link">Skills</a>
+  </div>
+  <div class="menu-item">
+    <a href="#projects" class="menu-link">Projects</a>
+  </div>
+  <div class="menu-item">
+    <a href="#contact" class="menu-link">Contact</a>
+  </div>
+</nav>
+
+<!-- Mobile menu toggle button -->
+<button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+</button>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()">
+  <nav class="mobile-menu">
+    <div class="mobile-menu-item">
+      <a href="#why-me" class="mobile-menu-link" (click)="closeMobileMenu()">Why me</a>
+    </div>
+    <div class="mobile-menu-item">
+      <a href="#skills" class="mobile-menu-link" (click)="closeMobileMenu()">Skills</a>
+    </div>
+    <div class="mobile-menu-item">
+      <a href="#projects" class="mobile-menu-link" (click)="closeMobileMenu()">Projects</a>
+    </div>
+    <div class="mobile-menu-item">
+      <a href="#contact" class="mobile-menu-link" (click)="closeMobileMenu()">Contact</a>
+    </div>
+    
+    <!-- Language Toggle im Mobile Menu -->
+    <div class="mobile-menu-item mobile-menu-language">
+      <app-language></app-language>
+    </div>
+  </nav>
+</div>

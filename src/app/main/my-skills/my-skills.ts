@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-skills',
+  imports: [],
+  templateUrl: './my-skills.html',
+  styleUrl: './my-skills.scss'
+})
+export class MySkills {
+  scrollToNext(): void {
+    const nextSection = document.querySelector('.my-projects-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}

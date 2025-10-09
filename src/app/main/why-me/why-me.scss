@@ -1,0 +1,546 @@
+﻿@use '../../../styles/tokens' as *;
+
+.why-me {
+  padding: 40px 0 40px; // Mobile: Max 40px zwischen Sections
+  background: transparent;
+  width: 100%;
+  overflow: visible; // Keine Scrollbar
+  
+  @media (min-width: $desktop) {
+    padding: $section-padding;
+    overflow: visible; // Desktop: Keine Scrollbar
+  }
+
+  .why-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 26px;
+    gap: 8px;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    
+    @media (min-width: $desktop) {
+      flex-direction: row;
+      align-items: center;
+      padding: 0 $spacing-80;
+      gap: 2px;
+      overflow: visible; // Desktop: Kein overflow
+    }
+  }
+  
+  .why-me-image {
+    display: none; // Mobile: Bild ausgeblendet
+    
+    @media (min-width: $desktop) {
+      display: block;
+      width: 490px;
+      height: 452px;
+      max-width: none;
+    }
+    
+    img {
+      width: 100%;
+      height: auto;
+      
+      @media (min-width: $desktop) {
+        width: 488px;
+        height: 452px;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .why-me-content {
+    position: relative;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+      width: 729px;
+      height: 452px;
+      overflow: visible; // Desktop: Kein overflow/scrollbar
+    }
+  }
+  
+  .why-me-headline {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: #E15544;
+    margin: 0 0 24px 0;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+      font-weight: 500;
+      font-size: 54px;
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: auto;
+      width: auto;
+      margin: 0;
+    }
+  }
+  
+  .about-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #02F4BF;
+    text-align: center;
+    margin: 0 0 24px 0;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 80px;
+      left: auto;
+      max-width: 685px;
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
+  .arrow-6 {
+    width: 22.95px;
+    height: 56px;
+    flex: none;
+    order: 0;
+    display: block;
+    align-self: flex-start; // Links am Rand
+    
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+  
+  .arrow-4-mobile {
+    width: 23.22px;
+    height: 41.3px;
+    flex: none;
+    order: 999;
+    display: block;
+    align-self: flex-end; // Rechts am Rand
+    
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    
+    @media (min-width: $desktop) {
+      position: absolute;
+      right: 0;
+      top: 170px; // 20px nach unten verschoben (war 150px)
+      left: auto;
+      width: 568px;
+      gap: 8px;
+      z-index: 3;
+      align-items: flex-start;
+      padding: 0;
+    }
+  }
+  
+  .availability-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px; // Mobile: Kein extra Padding, um overflow zu vermeiden
+    gap: 40px;
+    width: 100%;
+    max-width: 100%;
+    
+    @media (min-width: $desktop) {
+      padding: 0;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+  
+  .info-row-1 {
+    // Mobile: Column layout - "I am" über Location
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+    @media (min-width: $desktop) {
+      // Desktop: Row layout - "I am" links neben Location
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+  
+  .i-am-label {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: #E15544;
+    white-space: nowrap;
+    text-align: center;
+    
+    @media (min-width: $desktop) {
+      width: 116px;
+      height: 49px;
+      font-size: 48px;
+      line-height: 120%;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+  
+  .location-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+    
+    @media (min-width: $desktop) {
+      gap: $spacing-sm;
+      width: 235px;
+      height: 57px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+  
+  .location-icon {
+    width: 26px;
+    height: 32px;
+    flex-shrink: 0;
+    
+    @media (min-width: $desktop) {
+      width: 33.31px;
+      height: 41px;
+    }
+  }
+  
+  .location-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #02F4BF;
+    text-align: left;
+    
+    // Mobile: hide line breaks
+    br {
+      display: none;
+    }
+    
+    @media (min-width: $desktop) {
+      font-size: 18px;
+      width: 192px;
+      height: 48px;
+      
+      // Desktop: show line breaks
+      br {
+        display: inline;
+      }
+    }
+  }
+  
+  .info-row-2 {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    
+    @media (min-width: $desktop) {
+      padding: 0 0 0 152px;
+      gap: 208px;
+      width: 568px;
+      height: 56px;
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+  
+  .arrow-5 {
+    display: none;
+    
+    @media (min-width: $desktop) {
+      display: block;
+      width: 22.95px;
+      height: 56px;
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+  
+  .relocation-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    
+    @media (min-width: $desktop) {
+      gap: $spacing-sm;
+      width: 130px;
+      height: 48px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+  
+  .relocation-icon {
+    width: 25.73px;
+    height: 42px;
+    flex-shrink: 0;
+    
+    @media (min-width: $desktop) {
+      width: 30px;
+      height: 48.98px;
+    }
+  }
+  
+  .relocation-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #02F4BF;
+    text-align: left;
+    
+    // Mobile: hide line breaks
+    br {
+      display: none;
+    }
+    
+    @media (min-width: $desktop) {
+      width: 96px;
+      height: 40px;
+      font-size: 18px;
+      
+      // Desktop: show line breaks
+      br {
+        display: inline;
+      }
+    }
+  }
+  
+  .info-row-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 0 168px;
+      gap: 109px;
+      width: 568px;
+      height: 58px;
+      flex: none;
+      order: 2;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+  }
+  
+  .arrow-01 {
+    display: none;
+    
+    @media (min-width: $desktop) {
+      display: block;
+      margin: 0 auto;
+      width: 26.71px;
+      height: 56px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+  
+  .remote-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    
+    @media (min-width: $desktop) {
+      gap: $spacing-sm;
+    }
+  }
+  
+  .remote-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 7px;
+    
+    @media (min-width: $desktop) {
+      margin: 0 auto;
+      width: 241.85px;
+      height: 58px;
+      gap: 13px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+  
+  .arrow-4 {
+    display: none;
+    
+    @media (min-width: $desktop) {
+      display: block;
+      width: 23.85px;
+      height: 39.95px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+  
+  .remote-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    
+    @media (min-width: $desktop) {
+      gap: $spacing-sm;
+      width: 205px;
+      height: 58px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+  
+  .remote-icon {
+    width: 49.12px;
+    height: 43.96px;
+    flex-shrink: 0;
+    
+    @media (min-width: $desktop) {
+      width: 53.58px;
+      height: 46.99px;
+    }
+  }
+  
+  .remote-text {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #02F4BF;
+    text-align: left;
+    
+    // Mobile: hide line breaks
+    br {
+      display: none;
+    }
+    
+    @media (min-width: $desktop) {
+      width: 125px;
+      height: 42px;
+      font-size: 18px;
+      
+      // Desktop: show line breaks
+      br {
+        display: inline;
+      }
+    }
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+    
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 0 0 352px;
+      gap: 10px;
+      position: absolute;
+      width: 521px;
+      height: 52px;
+      left: 208px;
+      bottom: 0;
+      flex: none;
+      order: 2;
+      flex-grow: 0;
+      z-index: 2;
+    }
+  }
+  
+  .why-me-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 10px;
+    width: 137px;
+    height: 43px;
+    background: #02F4BF;
+    border: none;
+    border-radius: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #0B042D;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    @media (min-width: $desktop) {
+      width: 169px;
+      height: 52px;
+      padding: 15px 30px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    
+    &:hover {
+      background: transparent;
+      border: 1px solid #02F4BF;
+      border-radius: 0;
+      color: #02F4BF;
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 8px rgba(2, 244, 191, 0.3);
+    }
+  }
+}

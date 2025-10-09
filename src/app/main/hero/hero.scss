@@ -1,0 +1,271 @@
+@use '../../../styles/tokens' as *;
+
+.hero-section {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  min-height: calc(100vh - #{$header-height-mobile});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px $spacing-20 40px; // Mobile: Reduziert auf 40px
+  background: transparent;
+  position: relative;
+  
+  @media (min-width: $tablet) {
+    padding: $spacing-100 $spacing-40;
+  }
+  
+  @media (min-width: $desktop) {
+    min-height: calc(100vh - #{$header-height-desktop});
+    padding: $spacing-100 $spacing-80;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding: $spacing-100;
+  }
+}
+
+// Mobile Hero Layout - Figma Styles
+.hero-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-40;
+  width: 100%;
+
+  .hero-image-mobile {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 332 / 370;
+      object-fit: cover;
+    }
+  }
+
+  .hero-content-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    
+    .job-title-mobile {
+      // Figma Typography - scaled for mobile
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 120%;
+      color: #02F4BF; // Version 1/Green
+    }
+    
+    .name-mobile {
+      // Figma Typography - scaled for mobile
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 120%;
+      color: #02F4BF; // Version 1/Green
+    }
+  }
+}
+
+// Desktop Hero Layout - Exakt nach Figma
+.hero-desktop {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: $spacing-40;
+  min-height: 554px;
+  position: relative;
+  
+  .hero-content-desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    flex: 1;
+    position: relative;
+    min-height: 554px;
+    
+    .name-job-container {
+      // Figma: Name + Job title
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0;
+      gap: 8px;
+      width: 100%;
+      max-width: 808px;
+      
+      .job-title-desktop {
+        // Figma: FRONTEND DEVELOPER
+        font-family: 'Roboto Mono', monospace;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 54px;
+        line-height: 120%;
+        color: #02F4BF; // Version 1/Green
+        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+      
+      .name-desktop {
+        // Figma: Name
+        font-family: 'Roboto Mono', monospace;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 82px;
+        line-height: 120%;
+        color: #02F4BF; // Version 1/Green
+        
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+    }
+    
+    .hero-button-container {
+      // Figma: Frame 498 - Button Container
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      gap: 10px;
+      
+      position: absolute;
+      width: 169px;
+      height: 52px;
+      left: 0;
+      top: 117px;
+      
+      .hero-btn {
+        // Figma: Button Secondary WEB
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 30px;
+        gap: 10px;
+        
+        width: 169px;
+        height: 52px;
+        
+        // Figma: Font
+        font-family: 'Roboto Mono', monospace;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        
+        // Kein Zeilenumbruch
+        white-space: nowrap;
+        
+        // Figma: Colors
+        color: #E15544; // Version 1/Red
+        background: transparent;
+        border: 1px solid #02F4BF; // Version 1/Green
+        
+        // Figma: Rotation
+        transform: rotate(-90deg);
+        
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        
+        &:hover {
+          background: rgba(2, 244, 191, 0.1);
+          box-shadow: 0px 4px 8px rgba(2, 244, 191, 0.3);
+        }
+      }
+    }
+  }
+  
+  .hero-image-desktop {
+    // Figma: pic
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+    
+    img {
+      width: 539px;
+      height: 554px;
+      object-fit: cover;
+      
+      @media (min-width: $large-desktop) {
+        width: 539px;
+        height: 554px;
+      }
+    }
+  }
+}
+
+// Scroll Down Arrow - Figma Style
+.scroll-arrow {
+  // Figma: Arrow down
+  position: absolute;
+  width: 22px;
+  height: 50px;
+  left: calc(50% - 22px/2 - 10.5px);
+  bottom: $spacing-40;
+  
+  transform: rotate(-180deg);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: bounce 2s infinite;
+  
+  &:hover {
+    transform: rotate(-180deg) translateY(-4px);
+  }
+  
+  svg {
+    width: 22px;
+    height: 50px;
+    
+    path {
+      // Figma: Version 1/Red
+      fill: #E15544;
+    }
+  }
+}
+
+// Bounce Animation
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+// Responsive - Exakte Breakpoints
+@media (max-width: 767px) {
+  .hero-desktop { display: none; }
+  .hero-mobile { display: flex; }
+}
+
+@media (min-width: 768px) {
+  .hero-desktop { display: flex; }
+  .hero-mobile { display: none; }
+}

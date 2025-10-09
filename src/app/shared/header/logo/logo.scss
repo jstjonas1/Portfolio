@@ -1,0 +1,61 @@
+.logo {
+  // Base mobile styles
+  width: 60px;
+  height: 30px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  
+  .logo-text {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    font-family: 'Handjet', monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    // Version 1/Red
+    color: #E15544;
+    border: 1px solid #E15544;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Tablet styles
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 35px;
+    
+    .logo-text {
+      font-size: 32px;
+    }
+  }
+  
+  // Desktop styles
+  @media (min-width: 1024px) {
+    width: 80px;
+    height: 40px;
+    
+    .logo-text {
+      font-size: 40px;
+    }
+  }
+  
+  // Large desktop styles (original design)
+  @media (min-width: 1440px) {
+    width: 92px;
+    height: 44px;
+    
+    .logo-text {
+      font-size: 48px;
+    }
+  }
+}

@@ -9,11 +9,11 @@
     <!-- Figma: Content rechts (Why me) -->
     <div class="why-me-content">
       <!-- Figma: Headline -->
-      <h2 id="why-me-heading" class="why-me-headline">Why me</h2>
+      <h2 id="why-me-heading" class="why-me-headline">{{ 'whyMe.title' | translate }}</h2>
       
       <!-- Figma: Text about me -->
       <p class="about-text">
-        Write some information about yourself that is IT related. Why are you passionate about coding? Highlight your motivation for professional growth and continuous learning. Emphasise your strong problem-solving skills and passion for coding.
+        {{ 'whyMe.description' | translate }}
       </p>
       
       <!-- Figma: Container mit allen Info-Reihen + Mobile Arrows -->
@@ -25,10 +25,10 @@
         <div class="availability-details">
         <!-- Figma: Frame 489 - I am + Location -->
         <div class="info-row info-row-1">
-          <span class="i-am-label">I am</span>
+          <span class="i-am-label">{{ 'whyMe.iAm' | translate }}</span>
           <div class="location-wrapper">
             <img src="assets/img/icons/locatedicon.png" alt="Location" class="location-icon" />
-            <span class="location-text">located <br>in Berlin</span>
+            <span class="location-text" [innerHTML]="'whyMe.location' | translate"></span>
           </div>
         </div>
         
@@ -43,7 +43,7 @@
               <rect x="7" y="0" width="16" height="15" rx="2" stroke="#E15544" stroke-width="2"/>
               <rect x="0" y="10" width="30" height="34" rx="2" fill="#02F4BF"/>
             </svg>
-            <span class="relocation-text">open to <br>relocate</span>
+            <span class="relocation-text" [innerHTML]="'whyMe.relocation' | translate"></span>
           </div>
         </div>
         
@@ -64,7 +64,7 @@
                   <rect x="10" y="50" width="37" height="4" rx="3" fill="#02F4BF"/>
                   <rect x="23" y="51" width="7" height="1" rx="3" fill="#140754"/>
                 </svg>
-                <span class="remote-text">open to <br>work remote</span>
+                <span class="remote-text" [innerHTML]="'whyMe.remote' | translate"></span>
               </div>
               <img src="assets/img/arrows/arrow4.png" alt="" class="arrow-4" />
             </div>
@@ -79,7 +79,7 @@
       
       <!-- Figma: Button Primary Web -->
       <div class="button-container">
-        <button class="btn-primary why-me-btn" (click)="scrollToNext()">Let's talk</button>
+        <button class="btn-primary why-me-btn" (click)="scrollToNext()">{{ 'whyMe.button' | translate }}</button>
       </div>
     </div>
   </div>

@@ -2,13 +2,17 @@
 <section class="contact-section" id="contact" aria-labelledby="contact-heading">
   <div class="contact-container">
     
-    <!-- Überschrift oben -->
-    <h2 id="contact-heading">Contact me</h2>
+    <!-- Headline + Arrow Container - Figma Spezifikation -->
+    <div class="headline-arrow-container">
+      <h2 id="contact-heading">{{ 'contact.title' | translate }}</h2>
+      <!-- Arrow - Desktop only -->
+      <img src="assets/img/arrows/arrowcontactme.png" alt="" class="contact-arrow" aria-hidden="true">
+    </div>
     
     <!-- Content-Bereich: Links Text, Rechts Kontaktinfo -->
     <div class="contact-content-area">
       <div class="contact-text-area">
-        <p class="contact-intro">Drop me a message here. I am happy to get in contact with you and talk about projects. I'm looking forward to hearing from you!</p>
+        <p class="contact-intro">{{ 'Encourage people to contact you and describe what role you are interested in. Express interest in contributing to a new project.' | translate }}</p>
       </div>
       
       <div class="contact-info-area">
@@ -19,7 +23,7 @@
             </svg>
           </div>
           <div class="contact-text">
-            <span class="contact-label">E-Mail:</span>
+            <span class="contact-label">{{ 'E-Mail' | translate }}:</span>
             <a href="mailto:jstjonas@gmx.de" class="contact-link">jstjonas@gmx.de</a>
           </div>
         </div>
@@ -31,7 +35,7 @@
             </svg>
           </div>
           <div class="contact-text">
-            <span class="contact-label">Tel:</span>
+            <span class="contact-label">{{ 'Tel' | translate }}:</span>
             <a href="tel:+4915224463100" class="contact-link">0152 244 631 00</a>
           </div>
         </div>
@@ -40,18 +44,18 @@
 
     <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
       <fieldset class="form-fields">
-        <legend class="sr-only">Contact form</legend>
+        <legend class="sr-only">{{ 'contact.form.legend' | translate }}</legend>
         
         <div class="form-layout">
           <!-- Linke Spalte: Name und Email -->
           <div class="form-left">
             <div class="form-group">
-              <label for="name" class="sr-only">Your Name</label>
+              <label for="name" class="sr-only">{{ 'contact.form.name' | translate }}</label>
               <input 
                 type="text" 
                 id="name" 
                 name="name" 
-                placeholder="Your Name" 
+                [placeholder]="'contact.form.name' | translate" 
                 [(ngModel)]="formData.name" 
                 #nameField="ngModel"
                 required 
@@ -61,18 +65,18 @@
                 [class.error]="nameField.invalid && (nameField.dirty || nameField.touched)"
                 aria-describedby="name-error">
               <div id="name-error" class="error-message" *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
-                <span *ngIf="nameField.errors?.['required']">Name is required</span>
-                <span *ngIf="nameField.errors?.['minlength']">Name must be at least 2 characters</span>
+                <span *ngIf="nameField.errors?.['required']">{{ 'contact.errors.nameRequired' | translate }}</span>
+                <span *ngIf="nameField.errors?.['minlength']">{{ 'contact.errors.nameMinLength' | translate }}</span>
               </div>
             </div>
             
             <div class="form-group">
-              <label for="email" class="sr-only">Your Email</label>
+              <label for="email" class="sr-only">{{ 'contact.form.email' | translate }}</label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
-                placeholder="Your Email" 
+                [placeholder]="'contact.form.email' | translate" 
                 [(ngModel)]="formData.email" 
                 #emailField="ngModel"
                 required 
@@ -81,8 +85,8 @@
                 [class.error]="emailField.invalid && (emailField.dirty || emailField.touched)"
                 aria-describedby="email-error">
               <div id="email-error" class="error-message" *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
-                <span *ngIf="emailField.errors?.['required']">Email is required</span>
-                <span *ngIf="emailField.errors?.['email']">Please enter a valid email address</span>
+                <span *ngIf="emailField.errors?.['required']">{{ 'contact.errors.emailRequired' | translate }}</span>
+                <span *ngIf="emailField.errors?.['email']">{{ 'contact.errors.emailInvalid' | translate }}</span>
               </div>
             </div>
           </div>
@@ -90,11 +94,11 @@
           <!-- Rechte Spalte: Message -->
           <div class="form-right">
             <div class="form-group">
-              <label for="message" class="sr-only">Your Message</label>
+              <label for="message" class="sr-only">{{ 'contact.form.message' | translate }}</label>
               <textarea 
                 id="message" 
                 name="message" 
-                placeholder="Your Message" 
+                [placeholder]="'contact.form.message' | translate" 
                 rows="6" 
                 [(ngModel)]="formData.message" 
                 #messageField="ngModel"
@@ -104,8 +108,8 @@
                 [class.error]="messageField.invalid && (messageField.dirty || messageField.touched)"
                 aria-describedby="message-error"></textarea>
               <div id="message-error" class="error-message" *ngIf="messageField.invalid && (messageField.dirty || messageField.touched)">
-                <span *ngIf="messageField.errors?.['required']">Message is required</span>
-                <span *ngIf="messageField.errors?.['minlength']">Message must be at least 10 characters</span>
+                <span *ngIf="messageField.errors?.['required']">{{ 'contact.errors.messageRequired' | translate }}</span>
+                <span *ngIf="messageField.errors?.['minlength']">{{ 'contact.errors.messageMinLength' | translate }}</span>
               </div>
             </div>
           </div>
@@ -121,9 +125,9 @@
             required
             [class.error]="privacyField.invalid && (privacyField.dirty || privacyField.touched)"
             aria-describedby="privacy-error">
-          <label for="privacy">I've read the privacy policy and agree to the processing of my data as outlined.</label>
+          <label for="privacy">{{ 'contact.form.privacy' | translate }}</label>
           <div id="privacy-error" class="error-message" *ngIf="privacyField.invalid && (privacyField.dirty || privacyField.touched)">
-            <span *ngIf="privacyField.errors?.['required']">You must agree to the privacy policy</span>
+            <span *ngIf="privacyField.errors?.['required']">{{ 'contact.errors.privacyRequired' | translate }}</span>
           </div>
         </div>
       </fieldset>
@@ -132,13 +136,13 @@
         type="submit" 
         class="btn-primary" 
         [disabled]="!contactForm.valid || isSubmitting"
-        [attr.aria-label]="isSubmitting ? 'Sending message...' : 'Send message'">
-        <span *ngIf="!isSubmitting">Send</span>
+        [attr.aria-label]="isSubmitting ? ('contact.sending' | translate) : ('contact.send' | translate)">
+        <span *ngIf="!isSubmitting">{{ 'contact.send' | translate }}</span>
         <span *ngIf="isSubmitting" class="loading">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="spinner" aria-hidden="true">
             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-dasharray="31.416" stroke-dashoffset="31.416" fill="none"/>
           </svg>
-          Sending...
+          {{ 'contact.sending' | translate }}
         </span>
       </button>
     </form>

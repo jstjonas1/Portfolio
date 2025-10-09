@@ -20,6 +20,7 @@
   margin: 0 auto;
   padding: 40px $spacing-lg; // Mobile: Reduziert auf 40px
   background: transparent;
+  position: relative;
 
   @media (min-width: $desktop) {
     padding: $spacing-100 $spacing-120;
@@ -28,6 +29,19 @@
   .contact-container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+  }
+
+  // Headline + Arrow Container - Figma: "Headline +arrow"
+  .headline-arrow-container {
+    position: relative;
+    margin-bottom: $spacing-lg;
+    
+    @media (min-width: $desktop) {
+      width: 425px;
+      height: 72px;
+      margin-bottom: $spacing-xl;
+    }
   }
 
   // Überschrift oben - Figma Spezifikationen
@@ -39,7 +53,7 @@
     line-height: 120%; // Wie in Figma
     color: var(--color-red);
     text-align: left;
-    margin-bottom: $spacing-lg;
+    margin: 0;
     
     @media (min-width: $tablet) {
       font-size: 42px;
@@ -47,6 +61,23 @@
     
     @media (min-width: $desktop) {
       font-size: 54px; // Wie in Figma "Contact me Headline"
+      width: 330px;
+      height: 60px;
+    }
+  }
+
+  // Arrow Element - Figma: "Arrow"
+  .contact-arrow {
+    display: none; // Hidden on mobile
+    
+    @media (min-width: $desktop) {
+      display: block;
+      position: absolute;
+      width: 42.75px;
+      height: 60.6px;
+      left: 354px;
+      top: 18px;
+      object-fit: contain;
     }
   }
 
@@ -56,19 +87,21 @@
     flex-direction: column;
     gap: $spacing-xl;
     margin-bottom: $spacing-xxl;
+    position: relative;
 
     @media (min-width: $desktop) {
       flex-direction: row;
-      align-items: flex-start; // Beide auf gleicher Höhe starten
-      gap: 0; // Kein Gap zwischen den Bereichen
+      align-items: flex-start;
+      gap: $spacing-xxl;
+      width: 1015px;
+      height: 162px;
     }
 
     .contact-text-area {
       flex: 1;
 
       @media (min-width: $desktop) {
-        width: 50%; // Text nimmt genau 50% der Breite ein
-        max-width: 50%;
+        width: 504px; // Figma: "Some text"
       }
 
       .contact-intro {
@@ -78,7 +111,7 @@
         font-size: 16px; // Mobile
         line-height: 120%; // Wie in Figma
         color: var(--color-green);
-        text-align: justify; // Wie in Figma
+        text-align: left;
         margin: 0;
         
         @media (min-width: $tablet) {
@@ -86,7 +119,10 @@
         }
         
         @media (min-width: $desktop) {
-          font-size: 18px; // Wie in Figma "Contact me Text"
+          font-size: 18px; // Wie in Figma "Some text"
+          text-align: justify;
+          width: 504px;
+          height: 73px;
         }
       }
     }
@@ -95,11 +131,11 @@
       display: flex;
       flex-direction: column;
       gap: $spacing-lg;
-      align-items: flex-start; // Linksbündig ausgerichtet
+      align-items: flex-start;
 
       @media (min-width: $desktop) {
-        width: 50%; // Kontaktinfo nimmt die anderen 50% ein
-        padding-left: $spacing-lg; // Kleiner Abstand vom Text
+        width: 412px; // Figma: "Contact Tel. Web" width
+        gap: $spacing-xl;
       }
 
       @media (max-width: 1023px) {
@@ -109,40 +145,71 @@
 
       .contact-item {
         display: flex;
-        align-items: center; // Icon und Text auf gleicher Höhe in einer Zeile
+        align-items: center;
         gap: $spacing-md;
+        width: 100%;
+
+        @media (min-width: $desktop) {
+          height: 32px; // Figma: Frame height
+          position: relative;
+        }
+
+        // Email Item - Figma: "Contact Email Web"
+        &:first-child {
+          @media (min-width: $desktop) {
+            height: 30px;
+          }
+        }
+
+        // Phone Item - Figma: "Contact Tel. Web"
+        &:last-child {
+          @media (min-width: $desktop) {
+            height: 33px;
+          }
+        }
 
         .contact-icon-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 40px;
-          height: 40px;
-          background: rgba(225, 85, 68, 0.1);
-          border-radius: 0; // Figma zeigt eckige Icon-Hintergründe
+          width: 32px;
+          height: 32px;
           flex-shrink: 0;
+
+          @media (min-width: $desktop) {
+            width: 28px; // Figma: icon size
+            height: 30px;
+          }
 
           .contact-icon {
             color: var(--color-red);
-            width: 20px;
-            height: 20px;
+            width: 100%;
+            height: 100%;
+            
+            // SVG paths get red fill
+            path {
+              fill: var(--color-red);
+            }
           }
         }
 
         .contact-text {
           display: flex;
-          flex-direction: row; // Label und Link in einer Zeile
-          align-items: center;
-          gap: $spacing-sm;
+          flex-direction: column;
+          gap: 4px;
+
+          @media (min-width: $desktop) {
+            flex-direction: row;
+            align-items: center;
+            gap: $spacing-sm;
+          }
 
           .contact-label {
-            font-family: $font-primary; // Roboto Mono
+            font-family: $font-primary;
             font-style: normal;
-            font-weight: 500; // Wie in Figma
-            font-size: 14px; // Mobile
-            
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--color-green);
             line-height: 120%;
             
             @media (min-width: $desktop) {
@@ -153,15 +220,16 @@
           .contact-link {
             color: var(--color-green);
             text-decoration: none;
-            font-family: $font-primary; // Roboto Mono
+            font-family: $font-primary;
             font-style: normal;
-            font-weight: 500; // Wie in Figma
+            font-weight: 500;
             font-size: 18px; // Mobile
-            line-height: 120%; // Wie in Figma
+            line-height: 120%;
             transition: all 0.2s ease;
+            white-space: nowrap;
 
             @media (min-width: $desktop) {
-              font-size: 20px; // Wie in Figma "Contact info"
+              font-size: 20px; // Figma: "Tel: 0157 123 456 68" & "E-mail"
             }
 
             &:hover,

@@ -3,12 +3,12 @@
   <!-- Mobile Layout -->
   <div class="hero-mobile mobile-only">
     <div class="hero-image-mobile">
-      <img src="assets/img/firstprofil.jpeg" alt="Jonas Stegner - Fullstack Developer" />
+      <img src="assets/img/firstprofil.jpeg" [alt]="'hero.name' | translate" />
     </div>
     
     <div class="hero-content-mobile">
-      <div class="job-title-mobile">FULLSTACK DEVELOPER</div>
-      <div class="name-mobile">Jonas Stegner</div>
+      <div class="job-title-mobile">{{ 'hero.title' | translate }}</div>
+      <div class="name-mobile">{{ 'hero.name' | translate }}</div>
     </div>
   </div>
   
@@ -16,17 +16,17 @@
   <div class="hero-desktop desktop-only">
     <div class="hero-content-desktop">
       <div class="name-job-container">
-        <div class="job-title-desktop">FULLSTACK DEVELOPER</div>
-        <div class="name-desktop">Jonas Stegner</div>
+        <div class="job-title-desktop">{{ 'hero.title' | translate }}</div>
+        <div class="name-desktop">{{ 'hero.name' | translate }}</div>
       </div>
       
       <div class="hero-button-container">
-        <button class="btn-secondary hero-btn">Contact me</button>
+        <button class="btn-secondary hero-btn">{{ 'hero.letsTalk' | translate }}</button>
       </div>
     </div>
     
     <div class="hero-image-desktop">
-      <img src="assets/img/firstprofil.jpeg" alt="Jonas Stegner - Fullstack Developer" />
+      <img src="assets/img/firstprofil.jpeg" [alt]="'hero.name' | translate" />
     </div>
   </div>
   

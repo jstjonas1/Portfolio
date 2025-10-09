@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "whyMe": "Warum ich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "FULLSTACK ENTWICKLER",
+    "name": "Jonas Stegner",
+    "letsTalk": "Kontaktiere mich"  
+  },
+  "whyMe": {
+    "title": "Warum ich",
+    "description": "Schreiben Sie einige Informationen über sich selbst, die IT-bezogen sind. Warum sind Sie leidenschaftlich am Programmieren? Heben Sie Ihre Motivation für berufliches Wachstum und kontinuierliches Lernen hervor. Betonen Sie Ihre ausgeprägten Problemlösungsfähigkeiten und Ihre Leidenschaft für das Programmieren.",
+    "iAm": "Ich bin",
+    "location": "wohnhaft <br>in Berlin",
+    "relocation": "offen für <br> einen Umzug",
+    "remote": "offen für <br>Homeoffice",
+    "button": "Kontaktiere mich"
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "challengeText": "Ich freue mich über neue Herausforderungen,<br>sagen Sie mir einfach,<br>was Sie brauchen.",
+    "letsTalk": "Kontaktiere mich",
+    "angular": "Angular",
+    "typescript": "TypeScript",
+    "javascript": "JavaScript",
+    "html": "HTML",
+    "css": "CSS",
+    "api": "REST-API",
+    "firebase": "Firebase",
+    "git": "Git",
+    "scrum": "Scrum",
+    "materialDesign": "Material Design",
+    "challengeMe": "Ich nehme die Herausforderung an"
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "join": {
+      "title": "Join",
+      "description": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+      "technologies": "Angular | TypeScript | HTML | CSS | Firebase"
+    },
+    "sharkie": {
+      "title": "Sharkie",
+      "description": "Ein einfaches Score-Game basierend auf einem objektorientierten Ansatz. Hilf Sharkie zu wachsen um der größte Fisch im Meer zu werden.",
+      "technologies": "JavaScript | HTML | CSS"
+    },
+    "polloLoco": {
+      "title": "El Pollo Loco",
+      "description": "Jump, Run und Wurf-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+      "technologies": "JavaScript | HTML | CSS"
+    },
+    "github": "Github",
+    "liveTest": "Live-Test"
+  },
+  "references": {
+    "title": "Was die Leute über mich sagen",
+    "noah": {
+      "name": "Noah Mueller",
+      "project": "Projekt Sharkie",
+      "text": "Jonas hat das Team wirklich mit seiner großartigen Organisation und klaren Kommunikation zusammengehalten. Wir haben das Projekt im Handumdrehen fertiggestellt."
+    },
+    "evelyn": {
+      "name": "Evelyn Marx",
+      "project": "Projekt Pollo Loco",
+      "text": "Die Zusammenarbeit mit Jonas war eine großartige Erfahrung. Er ist ein talentierter Entwickler, der immer kreative Lösungen für Probleme findet."
+    },
+    "james": {
+      "name": "James Rugman",
+      "project": "Projekt Join",
+      "text": "Jonas ist ein außergewöhnlicher Entwickler mit einem scharfen Auge fürs Detail. Sein Engagement für das Projekt war herausragend."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Problemlöser gesucht?",
+    "description": "Kontaktieren Sie mich über dieses Formular. Ich freue mich von Ihnen zu hören, Sie kennen zu lernen und gemeinsam Lösungen zu finden.",
+    "needDeveloper": "Brauchen Sie einen Fullstack-Entwickler? <span class='highlight'>Kontaktieren Sie mich!</span>",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht ...",
+      "privacy": "Ich habe die <a href='/privacy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "send": "Nachricht senden"
+    },
+    "errors": {
+      "nameRequired": "Ihr Name ist erforderlich",
+      "emailRequired": "Ihre E-Mail ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "messageRequired": "keine Nachricht eingegeben",
+      "privacyRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
+    },
+    "success": "Nachricht erfolgreich gesendet!"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  }
+}

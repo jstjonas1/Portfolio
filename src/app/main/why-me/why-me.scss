@@ -57,11 +57,19 @@
   .why-me-content {
     position: relative;
     width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      min-height: 500px;
+      padding-bottom: 20px;
+    }
     
     @media (min-width: $desktop) {
       width: 729px;
-      height: 452px;
-      overflow: visible; // Desktop: Kein overflow/scrollbar
+      min-height: auto;
+      overflow: visible;
     }
   }
   
@@ -140,22 +148,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 0;
-    gap: 8px;
+    align-items: flex-end;
+    padding: 0 30px 0 0;
+    gap: 16px;
     width: 100%;
     margin: 0;
+    min-height: auto;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      gap: 20px;
+      padding: 20px 30px 20px 0;
+    }
     
     @media (min-width: $desktop) {
-      position: absolute;
-      right: 0;
-      top: 170px; // 20px nach unten verschoben (war 150px)
-      left: auto;
-      width: 568px;
+      align-items: flex-end;
+      width: 100%;
       gap: 8px;
-      z-index: 3;
-      align-items: flex-start;
       padding: 0;
+      margin-top: 170px; // Abstand nach Headline und About-Text
     }
   }
   
@@ -163,8 +173,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 0px 0px; // Mobile: Kein extra Padding, um overflow zu vermeiden
+    align-items: flex-end;
+    padding: 0px 0px;
     gap: 40px;
     width: 100%;
     max-width: 100%;
@@ -180,13 +190,19 @@
     // Mobile: Column layout - "I am" über Location
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-end;
+    gap: 12px;
+    width: 100%;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      gap: 16px;
+    }
     
     @media (min-width: $desktop) {
       // Desktop: Row layout - "I am" links neben Location
       flex-direction: row;
       gap: 64px;
+      width: auto;
     }
   }
   
@@ -267,6 +283,12 @@
     display: flex;
     align-items: center;
     gap: $spacing-md;
+    width: 100%;
+    justify-content: center;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      gap: 24px;
+    }
     
     @media (min-width: $desktop) {
       padding: 0 0 0 152px;
@@ -277,6 +299,7 @@
       order: 1;
       align-self: stretch;
       flex-grow: 0;
+      justify-content: flex-start;
     }
   }
   
@@ -351,6 +374,11 @@
     align-items: center;
     justify-content: center;
     gap: $spacing-md;
+    width: 100%;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      gap: 24px;
+    }
     
     @media (min-width: $desktop) {
       display: flex;
@@ -476,27 +504,26 @@
     }
   }
   
-  .button-container {
+    .button-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin-top: 40px;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
     width: 100%;
+    margin: 24px 0 0 0;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      margin: 32px 0 0 0;
+      justify-content: flex-end;
+    }
     
     @media (min-width: $desktop) {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 0 0 352px;
+      justify-content: flex-end;
       gap: 10px;
-      position: absolute;
-      width: 521px;
-      height: 52px;
-      left: 208px;
-      bottom: 0;
-      flex: none;
-      order: 2;
-      flex-grow: 0;
-      z-index: 2;
+      width: 100%;
+      margin: 32px 0 0 0;
     }
   }
   
@@ -506,9 +533,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 12px 20px;
+    padding: 12px 15px;
     gap: 10px;
-    width: 137px;
+    min-width: 137px;
+    width: auto;
+    max-width: 180px;
     height: 43px;
     background: #02F4BF;
     border: none;
@@ -516,10 +545,12 @@
     font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 120%;
     color: #0B042D;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     flex: none;
@@ -527,11 +558,13 @@
     flex-grow: 0;
     
     @media (min-width: $desktop) {
-      width: 169px;
+      min-width: 169px;
+      width: auto;
+      max-width: 200px;
       height: 52px;
-      padding: 15px 30px;
+      padding: 15px 20px;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 16px;
     }
     
     &:hover {

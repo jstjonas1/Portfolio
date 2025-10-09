@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
@@ -7,12 +8,22 @@ import { Component } from '@angular/core';
   templateUrl: './language.html',
   styleUrl: './language.scss'
 })
-export class Language {
+export class Language implements OnInit {
   currentLanguage: 'de' | 'en' = 'en';
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    // Get saved language from localStorage or use default
+    const savedLang = localStorage.getItem('language') as 'de' | 'en';
+    this.currentLanguage = savedLang || 'en';
+    this.translate.use(this.currentLanguage);
+  }
 
   setLanguage(lang: 'de' | 'en') {
     this.currentLanguage = lang;
-    // Implement language change logic here
+    this.translate.use(lang);
+    localStorage.setItem('language', lang);
     console.log(`Language changed to: ${lang}`);
   }
 }

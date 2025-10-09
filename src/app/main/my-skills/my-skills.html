@@ -1,7 +1,7 @@
 <!-- My Skills Section - Mit echten Technologie-Icons -->
 <section class="my-skills" id="skills">
   <div class="container">
-    <h2 class="section-title">My Skills</h2>
+    <h2 class="section-title">{{ 'skills.title' | translate }}</h2>
     
     <div class="skills-grid">
       <!-- Angular -->
@@ -89,21 +89,19 @@
         <div class="skill-icon challenge">
           <img src="assets/img/icons/challengeme.png" alt="Challenge me">
         </div>
-        <span class="skill-name">Challenge me</span>
-        <div class="challenge-hover-text">
-          I am always happy to<br>learn new technologies,<br>just tell me what you<br>need.
+        <span class="skill-name">{{ 'skills.challengeMe' | translate }}</span>
+        <div class="challenge-hover-text" [innerHTML]="'skills.challengeText' | translate">
         </div>
       </div>
     </div>
 
     <!-- Challenge Text - Nur Mobile (unter dem Grid) -->
-    <div class="mobile-challenge-text">
-      I am always happy to<br>learn new technologies,<br>just tell me what you<br>need.
+    <div class="mobile-challenge-text" [innerHTML]="'skills.challengeText' | translate">
     </div>
 
     <!-- Let's Talk Button - Nur Mobile -->
     <div class="mobile-button-container">
-      <a href="#contact" class="mobile-lets-talk-btn">Let's talk</a>
+      <a href="#contact" class="mobile-lets-talk-btn">{{ 'skills.button' | translate }}</a>
     </div>
     
   </div>

@@ -146,9 +146,9 @@
       gap: 10px;
       
       position: absolute;
-      width: 169px;
-      height: 52px;
-      left: 0;
+      width: 52px; // Höhe nach Rotation
+      height: 169px; // Breite nach Rotation
+      left: -58px; // Negative Position, damit Button nach Rotation linksbündig mit Headline ist
       top: 117px;
       
       .hero-btn {
@@ -179,8 +179,9 @@
         background: transparent;
         border: 1px solid #02F4BF; // Version 1/Green
         
-        // Figma: Rotation
+        // Figma: Rotation mit korrektem Transform-Origin
         transform: rotate(-90deg);
+        transform-origin: center center;
         
         cursor: pointer;
         transition: all 0.3s ease-in-out;

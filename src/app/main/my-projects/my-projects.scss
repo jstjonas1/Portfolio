@@ -2,22 +2,30 @@
 
 // My Projects Section - Figma Exact Styling
 .my-projects {
-  padding: 40px $spacing-20; // Mobile: Reduziert auf 40px
+  padding: 40px 15px;
   background: transparent;
+  width: 100%;
+  box-sizing: border-box;
   
   @media (min-width: 768px) {
-    padding: $spacing-100 $spacing-40;
+    padding: $spacing-100 15px;
   }
   
-  @media (min-width: $desktop) {
-    padding: $spacing-120 $spacing-80;
+  @media (min-width: 1300px) {
+    padding: $spacing-120 15px;
   }
   
   .container {
     max-width: 1178px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
     position: relative;
+    box-sizing: border-box;
+    
+    @media (min-width: 1300px) {
+      margin: 0 auto;
+    }
   }
   
   // Section Title - Figma H2
@@ -31,7 +39,7 @@
     text-align: center;
     margin-bottom: 32px; // Mobile: Reduziert auf 32px
     
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       font-size: 54px;
       margin-bottom: $spacing-64;
     }
@@ -43,7 +51,7 @@
     flex-direction: column;
     gap: $spacing-64;
     
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       gap: 105px; // Space between projects in Figma
     }
   }
@@ -61,7 +69,7 @@
     flex-direction: column;
     gap: $spacing-24;
     
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       position: relative;
       height: 371px;
       width: 100%;
@@ -84,7 +92,7 @@
         height: 280px;
       }
       
-      @media (min-width: $desktop) {
+      @media (min-width: 1200px) {
         width: 588px;
         height: 371px;
         object-fit: cover;
@@ -103,7 +111,7 @@
       pointer-events: none;
     }
     
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       position: absolute;
       left: 0;
       top: 0;
@@ -117,7 +125,7 @@
     flex-direction: column;
     gap: $spacing-24;
     
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       position: absolute;
       width: 498px;
       left: 636px;
@@ -130,7 +138,7 @@
       position: relative;
       width: 100%;
       
-      @media (min-width: $desktop) {
+      @media (min-width: 1200px) {
         width: 498px;
         height: 103px;
       }
@@ -146,7 +154,7 @@
       color: #02F4BF;
       margin: 0 0 $spacing-12 0;
       
-      @media (min-width: $desktop) {
+      @media (min-width: 1200px) {
         font-size: 48px;
         margin: 0;
         position: absolute;
@@ -165,7 +173,7 @@
       color: #02F4BF;
       margin: 0;
       
-      @media (min-width: $desktop) {
+      @media (min-width: 1200px) {
         font-size: 18px;
         position: absolute;
         left: 3px;
@@ -183,7 +191,7 @@
       color: #02F4BF;
       margin: 0;
       
-      @media (min-width: $desktop) {
+      @media (min-width: 1200px) {
         font-size: 18px;
         width: 492px;
       }
@@ -240,7 +248,7 @@
   
   // Alternating layout for desktop - Sharkie (even items)
   &:nth-child(even) {
-    @media (min-width: $desktop) {
+    @media (min-width: 1200px) {
       .project-image {
         left: 546px; // Bild rechts verschoben (Figma: left: 546px)
         right: auto;

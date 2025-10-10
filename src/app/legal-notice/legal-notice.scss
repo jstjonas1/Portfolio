@@ -1,13 +1,12 @@
 @use '../../styles/tokens' as *;
 
-/* Legal Notice Page */
 .legal-notice {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 92px); // Subtract header height
+  min-height: calc(100vh - 92px);
   overflow-y: auto;
-  background: #1E0A7D; // Version 1/Purple light
-  padding: 120px 0 80px 0; // Top padding for spacing, bottom for footer
+  background: #1E0A7D;
+  padding: 120px 0 80px 0;
 }
 
 .content-wrapper {
@@ -21,7 +20,6 @@
   margin: 0 auto;
 }
 
-/* Header Container - Frame 621 */
 .header-container {
   display: flex;
   flex-direction: row;
@@ -44,14 +42,13 @@
   font-weight: 500;
   font-size: 54px;
   line-height: 120%;
-  color: #E15544; /* Version 1/Red - Figma color */
+  color: #E15544;
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0;
 }
 
-/* Content Container - Frame 184 */
 .content-container {
   display: flex;
   flex-direction: column;
@@ -66,13 +63,12 @@
   flex-grow: 0;
 }
 
-/* Text Content */
 .text-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 0 0 200px; /* Left padding 200px as per Figma */
-  gap: 24px; /* Gap 24px as per Figma */
+  padding: 0 0 0 200px;
+  gap: 24px;
   width: 100%;
   max-width: 1439px;
   height: auto;
@@ -82,7 +78,6 @@
   flex-grow: 0;
 }
 
-/* Section - Frame 185 */
 .section {
   display: flex;
   flex-direction: column;
@@ -105,15 +100,14 @@
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  line-height: 120%; /* 29px */
-  color: #E15544; /* Version 1/Red - Figma color */
+  line-height: 120%;
+  color: #E15544;
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0 0 16px 0;
 }
 
-/* Imprint Text - Only for address (Cyan) */
 .section-text {
   width: 100%;
   max-width: 1032px;
@@ -122,8 +116,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 120%; /* 19px */
-  color: #3DCFB6; /* Version 2/green 100% - Cyan-Blue */
+  line-height: 120%;
+  color: #3DCFB6;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -131,35 +125,31 @@
   margin: 0;
 }
 
-/* Terms Text - Legal terms paragraphs with mixed colors */
 .highlighted-text {
   width: 100%;
   max-width: 968px;
   height: auto;
   font-family: 'Roboto Mono', monospace;
   font-style: normal;
-  font-weight: 400; /* Normal weight for body text */
-  font-size: 16px; /* Base size for body text */
+  font-weight: 400;
+  font-size: 16px;
   line-height: 120%;
-  color: #3DCFB6; /* Cyan for body text */
+  color: #3DCFB6;
   flex: none;
   flex-grow: 0;
   margin: 0 0 24px 0;
 }
 
-// Use ::ng-deep to style innerHTML content
 :host ::ng-deep .highlighted-text {
-  // Headlines/Überschriften in red and larger
   strong, b {
-    display: block; /* Block for headlines */
+    display: block;
     font-weight: 700 !important;
-    font-size: 19px !important; /* Larger for headlines */
-    color: #E15544 !important; /* Red for headlines */
-    margin-bottom: 8px; /* Space after headline */
+    font-size: 19px !important;
+    color: #E15544 !important;
+    margin-bottom: 8px;
   }
 }
 
-/* Spacer - Rectangle 8 */
 .spacer {
   width: 733.09px;
   height: 53.42px;
@@ -170,7 +160,6 @@
   flex-grow: 0;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .legal-notice {
     padding: 100px 0 0 0;
@@ -207,7 +196,6 @@
   }
 }
 
-/* Tablet Responsive */
 @media (min-width: 769px) and (max-width: 1024px) {
   .header-container {
     padding: 0 40px;

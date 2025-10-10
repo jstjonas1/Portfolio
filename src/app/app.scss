@@ -1,8 +1,6 @@
-// App Main Layout - Ensures proper section spacing
 main {
   display: block;
   
-  // Ensure all sections are properly spaced
   app-hero,
   app-why-me,
   app-my-skills,
@@ -12,7 +10,6 @@ main {
     display: block;
     width: 100%;
     
-    // Add consistent spacing between sections
     &:not(:last-child) {
       margin-bottom: 80px;
       
@@ -22,13 +19,11 @@ main {
     }
   }
   
-  // Hero section should not have top margin
   app-hero {
     margin-top: 0;
   }
 }
 
-// Development Health Check Controls
 .health-check-controls {
   position: fixed;
   top: 10px;

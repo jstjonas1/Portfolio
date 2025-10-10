@@ -1,0 +1,223 @@
+@use '../../styles/tokens' as *;
+
+/* Legal Notice Page */
+.legal-notice {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 92px); // Subtract header height
+  overflow-y: auto;
+  background: #1E0A7D; // Version 1/Purple light
+  padding: 120px 0 80px 0; // Top padding for spacing, bottom for footer
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 64px;
+  width: 100%;
+  max-width: 1439px;
+  margin: 0 auto;
+}
+
+/* Header Container - Frame 621 */
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 0 100px;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.page-title {
+  width: auto;
+  height: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 54px;
+  line-height: 120%;
+  color: #E15544; /* Version 1/Red - Figma color */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0;
+}
+
+/* Content Container - Frame 184 */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 24px;
+  width: 100%;
+  max-width: 1439px;
+  height: auto;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Text Content */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 0 200px; /* Left padding 200px as per Figma */
+  gap: 24px; /* Gap 24px as per Figma */
+  width: 100%;
+  max-width: 1439px;
+  height: auto;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Section - Frame 185 */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  width: 100%;
+  max-width: 1032px;
+  height: auto;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.section-title {
+  width: auto;
+  max-width: 346px;
+  height: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%; /* 29px */
+  color: #E15544; /* Version 1/Red - Figma color */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0 0 16px 0;
+}
+
+/* Imprint Text - Only for address (Cyan) */
+.section-text {
+  width: 100%;
+  max-width: 1032px;
+  height: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%; /* 19px */
+  color: #3DCFB6; /* Version 2/green 100% - Cyan-Blue */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0;
+}
+
+/* Terms Text - Legal terms paragraphs with mixed colors */
+.highlighted-text {
+  width: 100%;
+  max-width: 968px;
+  height: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 400; /* Normal weight for body text */
+  font-size: 16px; /* Base size for body text */
+  line-height: 120%;
+  color: #3DCFB6; /* Cyan for body text */
+  flex: none;
+  flex-grow: 0;
+  margin: 0 0 24px 0;
+}
+
+// Use ::ng-deep to style innerHTML content
+:host ::ng-deep .highlighted-text {
+  // Headlines/Überschriften in red and larger
+  strong, b {
+    display: block; /* Block for headlines */
+    font-weight: 700 !important;
+    font-size: 19px !important; /* Larger for headlines */
+    color: #E15544 !important; /* Red for headlines */
+    margin-bottom: 8px; /* Space after headline */
+  }
+}
+
+/* Spacer - Rectangle 8 */
+.spacer {
+  width: 733.09px;
+  height: 53.42px;
+  background: #D9D9D9;
+  opacity: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .legal-notice {
+    padding: 100px 0 0 0;
+  }
+
+  .header-container {
+    padding: 0 20px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .page-title {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .text-content {
+    padding: 0 20px;
+  }
+
+  .section,
+  .section-text,
+  .highlighted-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .highlighted-text {
+    font-size: 16px;
+  }
+
+  .spacer {
+    width: 100%;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    padding: 0 40px;
+  }
+
+  .text-content {
+    padding: 0 40px;
+  }
+
+  .page-title {
+    font-size: 42px;
+  }
+}

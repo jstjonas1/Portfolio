@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-why-me',
   imports: [TranslateModule],
   templateUrl: './why-me.html',
-  styleUrl: './why-me.scss'
+  styleUrl: './why-me.scss' 
 })
 export class WhyMe {
   scrollToNext(): void {

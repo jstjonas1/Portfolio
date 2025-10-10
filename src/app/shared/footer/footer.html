@@ -32,13 +32,13 @@
   </div>
   
   <div class="footer-legal">
-    <div class="legal-link">
-      <span>{{ 'footer.legalNotice' | translate }}</span>
-      <div class="underline"></div>
-    </div>
-    <div class="legal-link">
+    <a routerLink="/legal-notice" class="legal-link">
       <span>{{ 'footer.imprint' | translate }}</span>
-    </div>
+      <div class="underline"></div>
+    </a>
+    <a routerLink="/legal-notice" class="legal-link">
+      <span>Legal notice</span>
+    </a>
   </div>
 </footer>
 
@@ -86,8 +86,8 @@
   </div>
   
   <div class="footer-mobile-legal">
-    <span>{{ 'footer.legalNotice' | translate }}</span>
-    <span>{{ 'footer.imprint' | translate }}</span>
+    <a routerLink="/legal-notice">{{ 'footer.imprint' | translate }}</a>
+    <a routerLink="/legal-notice">Legal notice</a>
   </div>
 </footer>
 

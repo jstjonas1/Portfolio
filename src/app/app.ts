@@ -2,12 +2,6 @@ import { Component, signal, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
-import { Hero } from './main/hero/hero';
-import { WhyMe } from './main/why-me/why-me';
-import { MySkills } from './main/my-skills/my-skills';
-import { MyProjects } from './main/my-projects/my-projects';
-import { Refs } from './main/refs/refs';
-import { Contact } from './main/contact/contact';
 import { CodeHealthService } from './shared/services/code-health.service';
 
 
@@ -15,7 +9,7 @@ import { CodeHealthService } from './shared/services/code-health.service';
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, Hero, WhyMe, MySkills, MyProjects, Refs, Contact],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

@@ -1,56 +1,57 @@
 @use '../../../styles/tokens' as *;
 
 .header {
-  // Menu bar
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-md $spacing-lg;
-  gap: $spacing-lg;
-  
-  // Version 1/Gradient menu bar
-  background: linear-gradient(180deg, var(--color-purple-dark) 63.5%, rgba(11, 4, 45, 0.2) 118.69%);
-  box-shadow: $shadow-card;
-  border-radius: $border-radius;
-  
-  // Language Toggle im Header nur auf Desktop anzeigen
+  padding: 24px 140px;
+  gap: 48px;
+  width: 100%;
+  max-width: 1440px;
+  height: 92px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #0B042D 63.5%, rgba(11, 4, 45, 0.2) 118.69%);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  app-logo {
+    flex: none;
+    order: 0;
+  }
+
+  app-navbar {
+    flex: none;
+    order: 1;
+  }
+
   app-language {
-    display: none; // Versteckt auf Mobile
-    
-    @media (min-width: 768px) {
-      display: block; // Anzeigen ab Tablet
+    flex: none;
+    order: 2;
+    margin-left: auto;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 24px 80px;
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 40px;
+    gap: 24px;
+    height: auto;
+    min-height: 72px;
+
+    app-language {
+      display: none;
     }
   }
-  
-  // Mobile first - responsive breakpoints
-  @media (min-width: $tablet) {
-    padding: $spacing-lg $spacing-xl;
-    gap: $spacing-xl;
-  }
-  
-  @media (min-width: $desktop) {
-    padding: $spacing-xl 80px;
-    gap: $spacing-xxl;
-  }
-  
-  @media (min-width: $large-desktop) {
-    padding: $spacing-xl 140px;
-    gap: $spacing-xxl;
-    height: 92px;
-  }
-  
-  // For smaller mobile devices
+
   @media (max-width: 480px) {
-    padding: $spacing-sm $spacing-md;
-    gap: $spacing-md;
-    
-    // Stack vertically on very small screens if needed
-    &.mobile-stacked {
-      flex-direction: column;
-      position: relative;
-      padding: $spacing-md;
-      height: auto;
-    }
+    padding: 16px 20px;
+    gap: 16px;
   }
 }

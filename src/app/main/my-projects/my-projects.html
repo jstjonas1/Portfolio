@@ -1,68 +1,48 @@
-<!-- My Projects Section - Unified Responsive Layout -->
 <section class="my-projects" id="projects">
   <div class="container">
     <h2 class="section-title">{{ 'projects.title' | translate }}</h2>
     
     <div class="projects-grid">
-      <!-- Join Project -->
-      <div class="project-item">
-        <div class="project-content">
-          <div class="project-image">
-            <img src="assets/img/projects/join.png" [alt]="'projects.join.title' | translate">
-          </div>
-          <div class="project-info">
-            <div class="headline-technologies">
-              <h3 class="project-title">{{ 'projects.join.title' | translate }}</h3>
-              <p class="tech-stack">{{ 'projects.join.technologies' | translate }}</p>
+      @for (project of projects; track project.id) {
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-image">
+              <img 
+                [src]="project.image" 
+                [alt]="'projects.' + project.translationKey + '.title' | translate">
             </div>
-            <p class="project-description">{{ 'projects.join.description' | translate }}</p>
-            <div class="project-actions">
-              <a href="#" class="btn-link btn-secondary">{{ 'projects.github' | translate }}</a>
-              <a href="#" class="btn-link">{{ 'projects.liveTest' | translate }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sharkie Project -->
-      <div class="project-item">
-        <div class="project-content">
-          <div class="project-image">
-            <img src="assets/img/projects/sharkie.png" [alt]="'projects.sharkie.title' | translate">
-          </div>
-          <div class="project-info">
-            <div class="headline-technologies">
-              <h3 class="project-title">{{ 'projects.sharkie.title' | translate }}</h3>
-              <p class="tech-stack">{{ 'projects.sharkie.technologies' | translate }}</p>
-            </div>
-            <p class="project-description">{{ 'projects.sharkie.description' | translate }}</p>
-            <div class="project-actions">
-              <a href="#" class="btn-link btn-secondary">{{ 'projects.github' | translate }}</a>
-              <a href="#" class="btn-link">{{ 'projects.liveTest' | translate }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pollo Loco Project -->
-      <div class="project-item">
-        <div class="project-content">
-          <div class="project-image">
-            <img src="assets/img/projects/elpolloloco.png" [alt]="'projects.polloLoco.title' | translate">
-          </div>
-          <div class="project-info">
-            <div class="headline-technologies">
-              <h3 class="project-title">{{ 'projects.polloLoco.title' | translate }}</h3>
-              <p class="tech-stack">{{ 'projects.polloLoco.technologies' | translate }}</p>
-            </div>
-            <p class="project-description">{{ 'projects.polloLoco.description' | translate }}</p>
-            <div class="project-actions">
-              <a href="#" class="btn-link btn-secondary">{{ 'projects.github' | translate }}</a>
-              <a href="#" class="btn-link">{{ 'projects.liveTest' | translate }}</a>
+            <div class="project-info">
+              <div class="headline-technologies">
+                <h3 class="project-title">
+                  {{ 'projects.' + project.translationKey + '.title' | translate }}
+                </h3>
+                <p class="tech-stack">
+                  {{ 'projects.' + project.translationKey + '.technologies' | translate }}
+                </p>
+              </div>
+              <p class="project-description">
+                {{ 'projects.' + project.translationKey + '.description' | translate }}
+              </p>
+              <div class="project-actions">
+                <a 
+                  [href]="project.githubUrl" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-link btn-secondary">
+                  {{ 'projects.github' | translate }}
+                </a>
+                <a 
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  class="btn-link">
+                  {{ 'projects.liveTest' | translate }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </section>

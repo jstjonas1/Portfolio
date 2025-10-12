@@ -24,7 +24,6 @@ export class Language implements OnInit {
     this.currentLanguage = lang;
     this.translate.use(lang);
     localStorage.setItem('language', lang);
-    console.log(`Language changed to: ${lang}`);
   }
 }
 

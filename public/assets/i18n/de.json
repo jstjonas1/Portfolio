@@ -12,11 +12,11 @@
   },
   "whyMe": {
     "title": "Warum ich",
-    "description": "Schreiben Sie einige Informationen über sich selbst, die IT-bezogen sind. Warum sind Sie leidenschaftlich am Programmieren? Heben Sie Ihre Motivation für berufliches Wachstum und kontinuierliches Lernen hervor. Betonen Sie Ihre ausgeprägten Problemlösungsfähigkeiten und Ihre Leidenschaft für das Programmieren.",
+    "description": "Technik war immer meine Leidenschaft. Durch meine Lösungsorientierung und Kreativität, bringe ich die perfekten Eigenschaften für den Beruf mit. Immer auf der Suche nach neuen Herausforderungen. Mein Lebenslauf ist das Zeugnis meiner Neugier und Zielstrebigkeit.",
     "iAm": "Ich bin",
-    "location": "wohnhaft <br>in Berlin",
-    "relocation": "offen für <br> einen Umzug",
-    "remote": "offen für <br>Homeoffice",
+    "location": "wohnhaft in Berlin",
+    "relocation": "offen für einen Umzug",
+    "remote": "offen für Homeoffice",
     "button": "Kontaktiere mich"
   },
   "skills": {

@@ -32,9 +32,6 @@ export class Contact {
     this.isSubmitting = true;
     
     try {
-      console.log('Form submitted:', this.formData);
-      
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Here you would typically send the data to a backend service

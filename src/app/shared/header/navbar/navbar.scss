@@ -1,57 +1,55 @@
-// Desktop Menu System
 .menu-system {
-  display: none; // Hidden on mobile by default
+  display: none;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding: 0px;
-  gap: 16px;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0;
+  gap: 32px;
+  width: 100%;
+  max-width: 496px;
+  height: 26px;
   
-  // Show on tablet and up
   @media (min-width: 768px) {
     display: flex;
-    gap: 20px;
+    gap: 24px;
   }
   
   @media (min-width: 1024px) {
-    gap: 24px;
+    gap: 28px;
   }
   
   @media (min-width: 1440px) {
     gap: 32px;
-    width: 496px;
-    height: 26px;
   }
   
   .menu-item {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    
-    flex: none;
-    flex-grow: 0;
-    
-    @media (min-width: 1440px) {
-      width: 100px;
-      height: 26px;
-    }
+    align-items: center;
+    padding: 0;
+    flex: 0 1 auto;
+    min-width: fit-content;
+    height: 26px;
+    white-space: nowrap;
     
     .menu-link {
       font-family: 'Roboto Mono', monospace;
       font-style: normal;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 22px;
       line-height: 120%;
       text-align: center;
       text-decoration: none;
+      color: #E15544;
+      white-space: nowrap;
+      padding: 0 4px;
       
       // Version 1/Red
       color: #E15544;
       
       transition: opacity 0.3s ease;
+      cursor: pointer;
       
       &:hover {
         opacity: 0.8;
@@ -63,12 +61,6 @@
       
       @media (min-width: 1024px) {
         font-size: 20px;
-      }
-      
-      @media (min-width: 1440px) {
-        font-size: 22px;
-        width: 80px;
-        height: 26px;
       }
     }
   }

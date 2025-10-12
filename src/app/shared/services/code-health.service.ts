@@ -77,7 +77,6 @@ export class CodeHealthService {
   registerComponent(componentName: string): void {
     if (this.requiredComponents.includes(componentName)) {
       this.healthChecks[componentName] = true;
-      console.log(`✅ ${componentName} component successfully loaded`);
     }
   }
 
@@ -220,39 +219,16 @@ export class CodeHealthService {
   }
 
   /**
-   * Execute complete health check and log results to console
+   * Execute complete health check
    * Tests component health, responsive design, and critical functions
+   * Results are available via getHealthReport(), checkResponsiveDesign(), and testCriticalFunctions()
    * @public
    * @returns {void}
    */
   runCompleteHealthCheck(): void {
-    console.log('🔍 Starting Portfolio Health Check...\n');
-    
-    console.log('📦 Component Health:');
     const healthReport = this.getHealthReport();
-    healthReport.forEach(item => {
-      const status = item.status ? '✅' : '❌';
-      console.log(`  ${status} ${item.component}`);
-    });
-    
     const overallHealth = this.isAppHealthy();
-    console.log(`\n🏠 Overall App Health: ${overallHealth ? '✅ HEALTHY' : '❌ NEEDS ATTENTION'}\n`);
-    
-    console.log('📱 Responsive Design Check:');
     const responsiveTests = this.checkResponsiveDesign();
-    responsiveTests.forEach(test => {
-      const status = test.passed ? '✅' : '❌';
-      console.log(`  ${status} ${test.breakpoint} (${test.width}px)`);
-    });
-    
-    console.log('\n⚙️ Critical Functions Check:');
     const functionTests = this.testCriticalFunctions();
-    functionTests.forEach(test => {
-      const status = test.passed ? '✅' : '❌';
-      const error = test.error ? ` - Error: ${test.error}` : '';
-      console.log(`  ${status} ${test.functionName}${error}`);
-    });
-    
-    console.log('\n🎯 Health Check Complete!\n');
   }
 }

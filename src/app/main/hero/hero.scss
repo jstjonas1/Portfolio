@@ -138,7 +138,6 @@
     }
     
     .hero-button-container {
-      // Figma: Frame 498 - Button Container
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -146,13 +145,14 @@
       gap: 10px;
       
       position: absolute;
-      width: 52px; // Höhe nach Rotation
-      height: 169px; // Breite nach Rotation
-      left: -58px; // Negative Position, damit Button nach Rotation linksbündig mit Headline ist
-      top: 117px;
+      width: 52px;
+      height: fit-content;
+      min-height: 169px;
+      left: 0;
+      bottom: 100px;
+      max-height: 554px;
       
       .hero-btn {
-        // Figma: Button Secondary WEB
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -161,27 +161,26 @@
         padding: 15px 30px;
         gap: 10px;
         
-        width: 169px;
+        width: fit-content;
+        min-width: 169px;
         height: 52px;
         
-        // Figma: Font
+        transform-origin: left center;
+        
         font-family: 'Roboto Mono', monospace;
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 120%;
         
-        // Kein Zeilenumbruch
         white-space: nowrap;
         
-        // Figma: Colors
-        color: #E15544; // Version 1/Red
+        color: #E15544;
         background: transparent;
-        border: 1px solid #02F4BF; // Version 1/Green
+        border: 1px solid #02F4BF;
         
-        // Figma: Rotation mit korrektem Transform-Origin
         transform: rotate(-90deg);
-        transform-origin: center center;
+        transform-origin: left center;
         
         cursor: pointer;
         transition: all 0.3s ease-in-out;
@@ -218,22 +217,20 @@
   }
 }
 
-// Scroll Down Arrow - Figma Style
 .scroll-arrow {
-  // Figma: Arrow down
   position: absolute;
   width: 22px;
   height: 50px;
   left: calc(50% - 22px/2 - 10.5px);
   bottom: $spacing-40;
   
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   animation: bounce 2s infinite;
   
   &:hover {
-    transform: rotate(-180deg) translateY(-4px);
+    transform: rotate(180deg) translateY(-4px);
   }
   
   svg {
@@ -250,13 +247,13 @@
 // Bounce Animation
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: rotate(180deg) translateY(0);
   }
   40% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: rotate(180deg) translateY(-10px);
   }
   60% {
-    transform: translateX(-50%) translateY(-5px);
+    transform: rotate(180deg) translateY(-5px);
   }
 }
 

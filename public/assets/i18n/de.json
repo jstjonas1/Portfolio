@@ -82,8 +82,9 @@
       "name": "Name",
       "email": "E-Mail",
       "message": "Nachricht ...",
-      "privacy": "Ich habe die <a href='/privacy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-      "send": "Nachricht senden"
+      "privacy": "Ich habe die <a href='/legal-notice'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "send": "Nachricht senden",
+      "legend": "Kontaktformular"
     },
     "errors": {
       "nameRequired": "Ihr Name ist erforderlich",
@@ -92,7 +93,9 @@
       "messageRequired": "keine Nachricht eingegeben",
       "privacyRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
     },
-    "success": "Nachricht erfolgreich gesendet!"
+    "success": "Nachricht erfolgreich gesendet!",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet..."
   },
   "footer": {
     "imprint": "Impressum",
@@ -113,7 +116,7 @@
       "generalText": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
       "dataCollection": "Datenerfassung auf dieser Website",
       "whoResponsible": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
-      "whoResponsibleText": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.",
+      "whoResponsibleText": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt 'Hinweis zur Verantwortlichen Stelle' in dieser Datenschutzerklärung entnehmen.",
       "howCollect": "Wie erfassen wir Ihre Daten?",
       "howCollectText1": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.",
       "howCollectText2": "Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.",

@@ -420,6 +420,20 @@
       @media (min-width: $desktop) {
         font-size: 14px; // Wie in Figma "Privacy policy text"
       }
+      
+      ::ng-deep a {
+        color: var(--color-red) !important;
+        text-decoration: none !important;
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+        
+        &:visited {
+          color: var(--color-red) !important;
+        }
+      }
     }
 
     .error-message {

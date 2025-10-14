@@ -125,7 +125,7 @@
             required
             [class.error]="privacyField.invalid && (privacyField.dirty || privacyField.touched)"
             aria-describedby="privacy-error">
-          <label for="privacy">{{ 'contact.form.privacy' | translate }}</label>
+          <label for="privacy" [innerHTML]="'contact.form.privacy' | translate"></label>
           <div id="privacy-error" class="error-message" *ngIf="privacyField.invalid && (privacyField.dirty || privacyField.touched)">
             <span *ngIf="privacyField.errors?.['required']">{{ 'contact.errors.privacyRequired' | translate }}</span>
           </div>

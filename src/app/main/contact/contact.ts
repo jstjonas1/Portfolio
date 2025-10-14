@@ -32,10 +32,20 @@ export class Contact {
     this.isSubmitting = true;
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Contact from ${this.formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${this.formData.name}\n` +
+        `Email: ${this.formData.email}\n\n` +
+        `Message:\n${this.formData.message}`
+      );
+      const mailtoLink = `mailto:jstjonas@gmx.de?subject=${subject}&body=${body}`;
       
-      // Here you would typically send the data to a backend service
-      // Example: await this.contactService.sendMessage(this.formData);
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Wait a moment for the email client to open
+      await new Promise(resolve => setTimeout(resolve, 500));
       
       this.showSuccessMessage();
       this.resetForm();

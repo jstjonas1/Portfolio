@@ -94,6 +94,7 @@
       "privacyRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
     },
     "success": "Nachricht erfolgreich gesendet!",
+    "errorMessage": "Es gab einen Fehler beim Senden. Bitte versuchen Sie es erneut.",
     "send": "Nachricht senden",
     "sending": "Wird gesendet..."
   },

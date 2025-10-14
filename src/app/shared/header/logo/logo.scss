@@ -5,6 +5,13 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
   
   .logo-text {
     position: relative;

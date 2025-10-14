@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -42,9 +42,17 @@ import { RouterModule } from '@angular/router';
   templateUrl: './legal-notice.html',
   styleUrl: './legal-notice.scss'
 })
-export class LegalNotice {
+export class LegalNotice implements OnInit {
   /**
    * Constructor for LegalNotice component
    */
   constructor() {}
+
+  /**
+   * Lifecycle hook that is called after component initialization
+   * Scrolls the page to the top when the component is loaded
+   */
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -94,6 +94,7 @@
       "privacyRequired": "Please accept the privacy policy"
     },
     "success": "Message sent successfully!",
+    "errorMessage": "There was an error sending your message. Please try again.",
     "send": "Send message",
     "sending": "Sending..."
   },

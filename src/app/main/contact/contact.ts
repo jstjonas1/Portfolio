@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -17,6 +17,8 @@ interface ContactFormData {
   styleUrl: './contact.scss'
 })
 export class Contact {
+  @ViewChild('contactForm') contactForm!: NgForm;
+  
   formData: ContactFormData = {
     name: '',
     email: '',
@@ -25,11 +27,15 @@ export class Contact {
   };
 
   isSubmitting: boolean = false;
+  showSuccess: boolean = false;
+  showError: boolean = false;
 
   async onSubmit(): Promise<void> {
     if (this.isSubmitting) return;
     
     this.isSubmitting = true;
+    this.showSuccess = false;
+    this.showError = false;
     
     try {
       // Create mailto link with form data
@@ -47,11 +53,21 @@ export class Contact {
       // Wait a moment for the email client to open
       await new Promise(resolve => setTimeout(resolve, 500));
       
-      this.showSuccessMessage();
+      this.showSuccess = true;
       this.resetForm();
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        this.showSuccess = false;
+      }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
-      this.showErrorMessage();
+      this.showError = true;
+      
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        this.showError = false;
+      }, 5000);
     } finally {
       this.isSubmitting = false;
     }
@@ -79,14 +95,10 @@ export class Contact {
       message: '',
       privacy: false
     };
-  }
-
-  private showSuccessMessage(): void {
-    // You could use a toast service here instead of alert
-    alert('Thank you for your message! I will get back to you soon.');
-  }
-
-  private showErrorMessage(): void {
-    alert('Sorry, there was an error sending your message. Please try again.');
+    
+    // Reset form validation state
+    if (this.contactForm) {
+      this.contactForm.resetForm();
+    }
   }
 }

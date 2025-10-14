@@ -132,6 +132,15 @@
         </div>
       </fieldset>
       
+      <div class="form-messages">
+        <div *ngIf="showSuccess" class="success-message">
+          {{ 'contact.success' | translate }}
+        </div>
+        <div *ngIf="showError" class="error-message-form">
+          {{ 'contact.errorMessage' | translate }}
+        </div>
+      </div>
+      
       <button 
         type="submit" 
         class="btn-primary" 

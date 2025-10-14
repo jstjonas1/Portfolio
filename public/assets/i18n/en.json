@@ -88,9 +88,11 @@
     },
     "errors": {
       "nameRequired": "Your name is required",
+      "nameMinLength": "Name must be at least 2 characters long",
       "emailRequired": "Your email is required",
       "emailInvalid": "Please enter a valid email address",
-      "messageRequired": "Your message is empty",
+      "messageRequired": "Please enter a message",
+      "messageMinLength": "Message must be at least 10 characters long",
       "privacyRequired": "Please accept the privacy policy"
     },
     "success": "Message sent successfully!",

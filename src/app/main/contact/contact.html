@@ -51,19 +51,24 @@
           <div class="form-left">
             <div class="form-group">
               <label for="name" class="sr-only">{{ 'contact.form.name' | translate }}</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                [placeholder]="'contact.form.name' | translate" 
-                [(ngModel)]="formData.name" 
-                #nameField="ngModel"
-                required 
-                minlength="2"
-                maxlength="50"
-                autocomplete="name"
-                [class.error]="nameField.invalid && (nameField.dirty || nameField.touched)"
-                aria-describedby="name-error">
+              <div class="input-wrapper">
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  [placeholder]="'contact.form.name' | translate" 
+                  [(ngModel)]="formData.name" 
+                  #nameField="ngModel"
+                  required 
+                  minlength="2"
+                  maxlength="50"
+                  autocomplete="name"
+                  [class.error]="nameField.invalid && (nameField.dirty || nameField.touched)"
+                  [class.valid]="nameField.valid && (nameField.dirty || nameField.touched)"
+                  aria-describedby="name-error">
+                <span class="validation-icon error-icon" *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">!</span>
+                <span class="validation-icon success-icon" *ngIf="nameField.valid && (nameField.dirty || nameField.touched)">✓</span>
+              </div>
               <div id="name-error" class="error-message" *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
                 <span *ngIf="nameField.errors?.['required']">{{ 'contact.errors.nameRequired' | translate }}</span>
                 <span *ngIf="nameField.errors?.['minlength']">{{ 'contact.errors.nameMinLength' | translate }}</span>
@@ -72,18 +77,23 @@
             
             <div class="form-group">
               <label for="email" class="sr-only">{{ 'contact.form.email' | translate }}</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                [placeholder]="'contact.form.email' | translate" 
-                [(ngModel)]="formData.email" 
-                #emailField="ngModel"
-                required 
-                email
-                autocomplete="email"
-                [class.error]="emailField.invalid && (emailField.dirty || emailField.touched)"
-                aria-describedby="email-error">
+              <div class="input-wrapper">
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  [placeholder]="'contact.form.email' | translate" 
+                  [(ngModel)]="formData.email" 
+                  #emailField="ngModel"
+                  required 
+                  email
+                  autocomplete="email"
+                  [class.error]="emailField.invalid && (emailField.dirty || emailField.touched)"
+                  [class.valid]="emailField.valid && (emailField.dirty || emailField.touched)"
+                  aria-describedby="email-error">
+                <span class="validation-icon error-icon" *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">!</span>
+                <span class="validation-icon success-icon" *ngIf="emailField.valid && (emailField.dirty || emailField.touched)">✓</span>
+              </div>
               <div id="email-error" class="error-message" *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
                 <span *ngIf="emailField.errors?.['required']">{{ 'contact.errors.emailRequired' | translate }}</span>
                 <span *ngIf="emailField.errors?.['email']">{{ 'contact.errors.emailInvalid' | translate }}</span>
@@ -95,18 +105,23 @@
           <div class="form-right">
             <div class="form-group">
               <label for="message" class="sr-only">{{ 'contact.form.message' | translate }}</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                [placeholder]="'contact.form.message' | translate" 
-                rows="6" 
-                [(ngModel)]="formData.message" 
-                #messageField="ngModel"
-                required 
-                minlength="10"
-                maxlength="1000"
-                [class.error]="messageField.invalid && (messageField.dirty || messageField.touched)"
-                aria-describedby="message-error"></textarea>
+              <div class="input-wrapper">
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  [placeholder]="'contact.form.message' | translate" 
+                  rows="6" 
+                  [(ngModel)]="formData.message" 
+                  #messageField="ngModel"
+                  required 
+                  minlength="10"
+                  maxlength="1000"
+                  [class.error]="messageField.invalid && (messageField.dirty || messageField.touched)"
+                  [class.valid]="messageField.valid && (messageField.dirty || messageField.touched)"
+                  aria-describedby="message-error"></textarea>
+                <span class="validation-icon error-icon textarea-icon" *ngIf="messageField.invalid && (messageField.dirty || messageField.touched)">!</span>
+                <span class="validation-icon success-icon textarea-icon" *ngIf="messageField.valid && (messageField.dirty || messageField.touched)">✓</span>
+              </div>
               <div id="message-error" class="error-message" *ngIf="messageField.invalid && (messageField.dirty || messageField.touched)">
                 <span *ngIf="messageField.errors?.['required']">{{ 'contact.errors.messageRequired' | translate }}</span>
                 <span *ngIf="messageField.errors?.['minlength']">{{ 'contact.errors.messageMinLength' | translate }}</span>

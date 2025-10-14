@@ -45,4 +45,21 @@ export class Hero {
       });
     }
   }
+
+  /**
+   * Smoothly scrolls to the contact section
+   * Finds the contact section and scrolls it into view
+   * 
+   * @public
+   * @returns {void}
+   */
+  scrollToContact(): void {
+    const contactSection = document.querySelector('.contact-section') || document.querySelector('[id="contact"]');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 }

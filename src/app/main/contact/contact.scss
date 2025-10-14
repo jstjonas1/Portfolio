@@ -270,11 +270,42 @@
     flex-direction: column;
     position: relative;
 
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .validation-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      font-weight: bold;
+      pointer-events: none;
+      z-index: 1;
+      
+      &.error-icon {
+        color: var(--color-red);
+      }
+      
+      &.success-icon {
+        color: var(--color-green);
+      }
+      
+      &.textarea-icon {
+        top: 20px;
+        transform: none;
+      }
+    }
+
     input, textarea {
       background: transparent;
       border: 1.5px solid var(--color-green); // Wie in Figma "border: 1.5px solid"
       border-radius: 0; // Figma zeigt eckige Rahmen ohne border-radius
-      padding: 12px 16px; // Optimiert für 320px
+      padding: 12px 45px 12px 16px; // Right padding for icon space
       font-family: $font-primary; // Roboto Mono
       font-style: normal;
       font-weight: 400;
@@ -312,12 +343,25 @@
 
       &.error {
         border-color: var(--color-red);
-        box-shadow: 0 0 0 2px rgba(225, 85, 68, 0.1);
+        color: var(--color-red);
+        
+        &::placeholder {
+          color: rgba(225, 85, 68, 0.6);
+        }
+      }
+      
+      &.valid {
+        border-color: var(--color-green);
+        color: var(--color-green);
+        
+        &::placeholder {
+          color: rgba(2, 244, 191, 0.6);
+        }
       }
 
       @media (min-width: $tablet) {
         font-size: 16px;
-        padding: $spacing-md $spacing-lg;
+        padding: 12px 45px 12px 20px;
         
         &::placeholder {
           font-size: 16px;
@@ -326,10 +370,9 @@
 
       @media (min-width: $desktop) {
         font-size: 18px; // Größer für Desktop
-        padding: $spacing-lg $spacing-xl;
+        padding: 15px 50px 15px 25px;
         
         &::placeholder {
-
           font-size: 18px;
         }
       }

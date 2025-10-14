@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { inject } from '@angular/core';
 
 interface ContactFormData {
   name: string;
@@ -17,6 +19,8 @@ interface ContactFormData {
   styleUrl: './contact.scss'
 })
 export class Contact {
+  private http = inject(HttpClient);
+  
   @ViewChild('contactForm') contactForm!: NgForm;
   
   formData: ContactFormData = {
@@ -38,20 +42,22 @@ export class Contact {
     this.showError = false;
     
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Contact from ${this.formData.name}`);
-      const body = encodeURIComponent(
-        `Name: ${this.formData.name}\n` +
-        `Email: ${this.formData.email}\n\n` +
-        `Message:\n${this.formData.message}`
-      );
-      const mailtoLink = `mailto:jstjonas@gmx.de?subject=${subject}&body=${body}`;
+      // Send email using Formspree (free email service)
+      const formspreeEndpoint = 'https://formspree.io/f/mpwyovvq';
       
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Wait a moment for the email client to open
-      await new Promise(resolve => setTimeout(resolve, 500));
+      const emailData = {
+        name: this.formData.name,
+        email: this.formData.email,
+        message: this.formData.message,
+        _replyto: this.formData.email,
+        _subject: `Portfolio Contact from ${this.formData.name}`
+      };
+
+      await this.http.post(formspreeEndpoint, emailData, {
+        headers: new HttpHeaders({
+          'Accept': 'application/json'
+        })
+      }).toPromise();
       
       this.showSuccess = true;
       this.resetForm();

@@ -13,10 +13,10 @@
   "whyMe": {
     "title": "Warum ich",
     "description": "Technik war immer meine Leidenschaft. Durch meine Lösungsorientierung und Kreativität, bringe ich die perfekten Eigenschaften für den Beruf mit. Immer auf der Suche nach neuen Herausforderungen. Mein Lebenslauf ist das Zeugnis meiner Neugier und Zielstrebigkeit.",
-    "iAm": "Ich bin",
-    "location": "wohnhaft in Berlin",
-    "relocation": "offen für einen Umzug",
-    "remote": "offen für Homeoffice",
+    "iAm": "I am",
+    "location": "located <br>in Berlin",
+    "relocation": "open to <br>relocate",
+    "remote": "open for <br>remote work",
     "button": "Kontaktiere mich"
   },
   "skills": {
@@ -88,9 +88,11 @@
     },
     "errors": {
       "nameRequired": "Ihr Name ist erforderlich",
+      "nameMinLength": "Der Name muss mindestens 2 Zeichen lang sein",
       "emailRequired": "Ihre E-Mail ist erforderlich",
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-      "messageRequired": "keine Nachricht eingegeben",
+      "messageRequired": "Bitte geben Sie eine Nachricht ein",
+      "messageMinLength": "Die Nachricht muss mindestens 10 Zeichen lang sein",
       "privacyRequired": "Bitte akzeptieren Sie die Datenschutzerklärung"
     },
     "success": "Nachricht erfolgreich gesendet!",

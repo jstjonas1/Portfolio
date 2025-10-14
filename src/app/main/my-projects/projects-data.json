@@ -11,16 +11,7 @@
     "id": "sharkie",
     "image": "assets/img/projects/sharkie.png",
     "translationKey": "sharkie",
-    "githubUrl": "https://github.com/yourusername/sharkie",
-    "liveUrl": "https://sharkie-demo.example.com",
+    "githubUrl": "https://github.com/jstjonas1/Sharki",
+    "liveUrl": "https://jonas-stegner.developerakademie.net/sharki/index.html",
     "order": 2
-  },
-  {
-    "id": "pollo-loco",
-    "image": "assets/img/projects/elpolloloco.png",
-    "translationKey": "polloLoco",
-    "githubUrl": "https://github.com/yourusername/pollo-loco",
-    "liveUrl": "https://polloloco-demo.example.com",
-    "order": 3
-  }
-]
+  }]

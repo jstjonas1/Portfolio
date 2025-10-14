@@ -2,13 +2,13 @@
 
 // My Projects Section - Figma Exact Styling
 .my-projects {
-  padding: 40px 15px;
+  padding: 40px 20px;
   background: transparent;
   width: 100%;
   box-sizing: border-box;
   
   @media (min-width: 768px) {
-    padding: $spacing-100 15px;
+    padding: $spacing-100 40px;
   }
   
   @media (min-width: 1300px) {
@@ -17,15 +17,11 @@
   
   .container {
     max-width: 1178px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     width: 100%;
     position: relative;
     box-sizing: border-box;
-    
-    @media (min-width: 1300px) {
-      margin: 0 auto;
-    }
   }
   
   // Section Title - Figma H2
@@ -199,8 +195,14 @@
 
     .project-actions {
       display: flex;
-      gap: 24px;
+      gap: 12px;
       align-items: center;
+      flex-wrap: wrap;
+      
+      @media (min-width: 400px) {
+        gap: 24px;
+        flex-wrap: nowrap;
+      }
 
       .btn-link {
         // Button Primary Web - Figma
@@ -208,19 +210,29 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 15px 30px;
-        height: 52px;
+        padding: 12px 20px;
+        min-height: 44px;
+        height: auto;
         background: #02F4BF;
         border: none;
         font-family: 'Roboto Mono', monospace;
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 120%;
         color: #0B042D;
         text-decoration: none;
         transition: all 0.3s ease-in-out;
         white-space: nowrap;
+        flex: 1 1 auto;
+        min-width: 0;
+        
+        @media (min-width: 400px) {
+          padding: 15px 30px;
+          height: 52px;
+          font-size: 18px;
+          flex: 0 0 auto;
+        }
         
         &:hover {
           background: transparent;

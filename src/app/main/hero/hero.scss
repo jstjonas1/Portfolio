@@ -9,12 +9,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px $spacing-20 40px; // Mobile: Reduziert auf 40px
+  padding: 40px 20px; // Mobile: Consistent padding
   background: transparent;
   position: relative;
+  box-sizing: border-box;
   
   @media (min-width: $tablet) {
-    padding: $spacing-100 $spacing-40;
+    padding: $spacing-100 40px;
   }
   
   @media (min-width: $desktop) {

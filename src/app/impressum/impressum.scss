@@ -1,0 +1,91 @@
+@import '../../styles/tokens';
+
+.impressum-container {
+  min-height: 100vh;
+  padding: 140px 140px 80px;
+  background: var(--gradient-main);
+  
+  .impressum-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--color-white);
+    
+    h1 {
+      font-family: $font-primary;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--color-red);
+      margin-bottom: $spacing-40;
+      
+      @media (max-width: 768px) {
+        font-size: 48px;
+      }
+    }
+    
+    h2 {
+      font-family: $font-primary;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-red);
+      margin-top: $spacing-40;
+      margin-bottom: $spacing-24;
+    }
+    
+    p {
+      font-family: $font-primary;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--color-white);
+      margin-bottom: $spacing-16;
+    }
+    
+    a {
+      color: var(--color-red);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: var(--color-green);
+        text-decoration: underline;
+      }
+    }
+    
+    .contact-info,
+    .contact-details {
+      margin-bottom: $spacing-32;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .impressum-container {
+    padding: 120px 80px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .impressum-container {
+    padding: 100px 40px 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .impressum-container {
+    padding: 80px 20px 30px;
+    
+    .impressum-content {
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

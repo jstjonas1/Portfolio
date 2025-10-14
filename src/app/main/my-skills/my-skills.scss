@@ -5,6 +5,10 @@
   padding: 40px 20px; // Mobile: Max 40px zwischen Sections
   background: transparent;
   
+  @media (min-width: 768px) {
+    padding: 80px 40px;
+  }
+  
   @media (min-width: $desktop) {
     padding: $section-padding;
   }
@@ -14,11 +18,8 @@
     margin: 0 auto;
     width: 100%;
     position: relative;
-    padding: 0 26px; // Mobile: Side padding für Zentrierung
-    
-    @media (min-width: $desktop) {
-      padding: 0;
-    }
+    padding: 0;
+    box-sizing: border-box;
   }
   
   // Section Title
@@ -151,7 +152,10 @@
       
       .skill-icon {
         transform: scale(1.1);
-        box-shadow: 0px 12px 24px rgba(2, 244, 191, 0.3);
+        
+        img, svg {
+          filter: drop-shadow(0px 8px 16px rgba(2, 244, 191, 0.6));
+        }
       }
     }
     

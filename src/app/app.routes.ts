@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { MainPage } from './main/main-page';
 import { LegalNotice } from './legal-notice/legal-notice';
+import { ImpressumComponent } from './impressum/impressum';
 
 /**
  * Application Routing Configuration
@@ -38,7 +39,8 @@ export const routes: Routes = [
   },
   {
     path: 'impressum',
-    redirectTo: 'legal-notice'
+    component: ImpressumComponent,
+    title: 'Impressum - Jonas Stegner'
   },
   {
     path: '**',

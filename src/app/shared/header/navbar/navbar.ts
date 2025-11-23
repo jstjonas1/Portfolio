@@ -20,4 +20,20 @@ export class Navbar {
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
   }
+
+  scrollToSection(sectionId: string): void {
+    this.closeMobileMenu();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = window.innerWidth < 768 ? 30 : 0; // 30px Offset in Mobile-Ansicht
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

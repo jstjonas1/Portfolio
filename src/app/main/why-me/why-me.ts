@@ -9,9 +9,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class WhyMe {
   scrollToNext(): void {
-    const nextSection = document.querySelector('.my-skills-section');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.querySelector('.contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }

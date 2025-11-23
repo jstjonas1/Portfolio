@@ -102,9 +102,13 @@ $shadow-header: 0px 4px 12px 0px rgba(11, 4, 45, 0.25);
 
 // Container & Layout
 $container-max-width: 1440px;
+$container-padding-mobile: $spacing-20;
+$container-padding-tablet: $spacing-40;
+$container-padding-desktop: $spacing-80;
+
 $section-padding-mobile: $spacing-80 $spacing-20;
 $section-padding-tablet: $spacing-100 $spacing-40;
-$section-padding-desktop: $spacing-100 $spacing-120;
+$section-padding-desktop: $spacing-100 $spacing-80;
 
 // Component Sizes - Figma Komponenten
 $button-height-small: 40px;
@@ -126,4 +130,23 @@ $header-height-desktop: 92px;
   
   @media (min-width: $tablet) { font-size: 48px; }
   @media (min-width: $large-desktop) { font-size: 64px; }
+}
+
+// Container Mixin - Einheitliches Padding für alle Sektionen
+@mixin section-container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding-mobile;
+  padding-right: $container-padding-mobile;
+  width: 100%;
+  
+  @media (min-width: $tablet) {
+    padding-left: $container-padding-tablet;
+    padding-right: $container-padding-tablet;
+  }
+  
+  @media (min-width: $large-desktop) {
+    padding-left: $container-padding-desktop;
+    padding-right: $container-padding-desktop;
+  }
 }

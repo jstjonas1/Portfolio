@@ -2,15 +2,15 @@
 
 // My Skills Section - Figma Exact Styling
 .my-skills {
-  padding: 40px 20px; // Mobile: Max 40px zwischen Sections
+  padding: 40px $container-padding-mobile;
   background: transparent;
   
-  @media (min-width: 768px) {
-    padding: 80px 40px;
+  @media (min-width: $tablet) {
+    padding: 80px $container-padding-tablet;
   }
   
-  @media (min-width: $desktop) {
-    padding: $section-padding;
+  @media (min-width: $large-desktop) {
+    padding: $spacing-100 $container-padding-desktop;
   }
   
   .container {

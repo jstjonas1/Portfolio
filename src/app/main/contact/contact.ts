@@ -90,8 +90,10 @@ export class Contact {
   }
 
   private isValidEmail(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    // Prüfung: mindestens 1 Buchstabe vor @, @ vorhanden, mindestens 1 Buchstabe nach @,
+    // dann ein Punkt, dann mindestens 1 Buchstabe
+    const emailRegex = /^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z][a-zA-Z0-9.-]*\.[a-zA-Z]+$/;
+    return emailRegex.test(email.trim());
   }
 
   private resetForm(): void {

@@ -2,21 +2,21 @@
 
 // My Projects Section - Figma Exact Styling
 .my-projects {
-  padding: 40px 20px;
+  padding: 40px $container-padding-mobile;
   background: transparent;
   width: 100%;
   box-sizing: border-box;
   
-  @media (min-width: 768px) {
-    padding: $spacing-100 40px;
+  @media (min-width: $tablet) {
+    padding: $spacing-100 $container-padding-tablet;
   }
   
-  @media (min-width: 1300px) {
-    padding: $spacing-120 15px;
+  @media (min-width: $large-desktop) {
+    padding: $spacing-120 $container-padding-desktop;
   }
   
   .container {
-    max-width: 1178px;
+    max-width: $container-max-width;
     margin: 0 auto;
     padding: 0;
     width: 100%;

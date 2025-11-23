@@ -22,6 +22,7 @@
   "skills": {
     "title": "My Skills",
     "challengeText": "I am always happy to<br>learn new technologies,<br>just tell me what you<br>need.",
+    "button": "Let's talk",
     "letsTalk": "Let's talk",
     "angular": "Angular",
     "typescript": "TypeScript",

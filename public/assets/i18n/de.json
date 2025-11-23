@@ -22,6 +22,7 @@
   "skills": {
     "title": "Meine Fähigkeiten",
     "challengeText": "Ich freue mich über neue Herausforderungen,<br>sagen Sie mir einfach,<br>was Sie brauchen.",
+    "button": "Kontaktiere mich",
     "letsTalk": "Kontaktiere mich",
     "angular": "Angular",
     "typescript": "TypeScript",

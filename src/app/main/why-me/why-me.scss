@@ -3,19 +3,19 @@
 // Mobile-first: Under 1300px = Mobile, 1300px+ = Desktop
 // All text elements centered on mobile
 .why-me {
-  padding: 40px 20px; // Mobile: Consistent padding
+  padding: 40px $container-padding-mobile;
   background: transparent;
   width: 100%;
-  overflow: visible; // Keine Scrollbar
+  overflow: visible;
   box-sizing: border-box;
   
-  @media (min-width: 768px) {
-    padding: 80px 40px;
+  @media (min-width: $tablet) {
+    padding: 80px $container-padding-tablet;
   }
   
-  @media (min-width: 1300px) {
-    padding: $section-padding;
-    overflow: visible; // Desktop: Keine Scrollbar
+  @media (min-width: $large-desktop) {
+    padding: $spacing-100 $container-padding-desktop;
+    overflow: visible;
   }
 
   .why-me-container {
@@ -30,12 +30,11 @@
     box-sizing: border-box;
     overflow-x: hidden;
     
-    @media (min-width: 1300px) {
+    @media (min-width: $large-desktop) {
       flex-direction: row;
       align-items: center;
-      padding: 0 $spacing-80;
       gap: 2px;
-      overflow: visible; // Desktop: Kein overflow
+      overflow: visible;
     }
   }
   

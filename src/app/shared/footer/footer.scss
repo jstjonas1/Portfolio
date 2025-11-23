@@ -292,23 +292,28 @@
 
 // Arrow Up Button
 .arrow-up-btn {
-  position: fixed;
-  bottom: 100px;
-  right: 25px;
+  display: none; // Mobile: Ausgeblendet
   
-  width: 22px;
-  height: 50px;
-  
-  background: transparent;
-  border: none;
-  color: var(--color-red);
-  
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-  
-  &:hover {
-    opacity: 0.8;
+  @media (min-width: $tablet) {
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    
+    width: 22px;
+    height: 50px;
+    
+    background: transparent;
+    border: none;
+    color: var(--color-red);
+    
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    
+    &:hover {
+      opacity: 0.8;
+    }
   }
   
   @media (min-width: 1440px) {

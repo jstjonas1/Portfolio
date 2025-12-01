@@ -83,7 +83,7 @@
       "name": "Name",
       "email": "E-Mail",
       "message": "Nachricht ...",
-      "privacy": "Ich habe die <a href='/legal-notice'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "privacy": "Ich habe die <a href='legal-notice'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       "send": "Nachricht senden",
       "legend": "Kontaktformular"
     },

@@ -41,6 +41,7 @@
       height: auto;
       aspect-ratio: 332 / 370;
       object-fit: cover;
+      object-position: top;
     }
   }
 
@@ -204,6 +205,7 @@
       width: 539px;
       height: 554px;
       object-fit: cover;
+      object-position: top;
       
       @media (min-width: $large-desktop) {
         width: 539px;

@@ -85,8 +85,8 @@
                   [placeholder]="'contact.form.email' | translate" 
                   [(ngModel)]="formData.email" 
                   #emailField="ngModel"
-                  required 
-                  email
+                  required
+                  appEmailValidator
                   autocomplete="email"
                   [class.error]="emailField.invalid && (emailField.dirty || emailField.touched)"
                   [class.valid]="emailField.valid && (emailField.dirty || emailField.touched)"

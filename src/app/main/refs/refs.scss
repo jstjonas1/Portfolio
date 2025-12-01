@@ -15,6 +15,7 @@
 
   @media (min-width: $tablet) {
     padding: 80px $container-padding-tablet;
+    gap: 48px;
   }
 
   @media (min-width: $large-desktop) {

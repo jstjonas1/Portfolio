@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject } from '@angular/core';
+import { EmailValidatorDirective } from './email-validator.directive';
 
 interface ContactFormData {
   name: string;
@@ -14,7 +15,7 @@ interface ContactFormData {
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, CommonModule, TranslateModule],
+  imports: [FormsModule, CommonModule, TranslateModule, EmailValidatorDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })
@@ -90,9 +91,7 @@ export class Contact {
   }
 
   private isValidEmail(email: string): boolean {
-    // Prüfung: mindestens 1 Buchstabe vor @, @ vorhanden, mindestens 1 Buchstabe nach @,
-    // dann ein Punkt, dann mindestens 1 Buchstabe
-    const emailRegex = /^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z][a-zA-Z0-9.-]*\.[a-zA-Z]+$/;
+    const emailRegex = /^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z0-9][a-zA-Z0-9-]*\.[a-zA-Z][a-zA-Z0-9]*$/;
     return emailRegex.test(email.trim());
   }
 

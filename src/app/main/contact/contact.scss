@@ -37,25 +37,28 @@
     position: relative;
   }
 
-  // Headline + Arrow Container - Figma: "Headline +arrow"
+  // Headline + Arrow Container
   .headline-arrow-container {
     position: relative;
     margin-bottom: $spacing-lg;
+    display: flex;
+    justify-content: center;
     
     @media (min-width: $desktop) {
       width: 425px;
       height: 72px;
       margin-bottom: $spacing-xl;
+      justify-content: flex-start;
     }
   }
 
-  // Überschrift oben - Figma Spezifikationen
+  // Überschrift oben
   h2 {
-    font-family: $font-primary; // Roboto Mono wie in Figma
+    font-family: $font-primary; // Roboto Mono 
     font-style: normal;
-    font-weight: 500; // Wie in Figma
+    font-weight: 500;
     font-size: 32px; // Mobile
-    line-height: 120%; // Wie in Figma
+    line-height: 120%;
     color: var(--color-red);
     text-align: left;
     margin: 0;
@@ -65,13 +68,13 @@
     }
     
     @media (min-width: $desktop) {
-      font-size: 54px; // Wie in Figma "Contact me Headline"
+      font-size: 54px; //"Contact me Headline"
       width: 330px;
       height: 60px;
     }
   }
 
-  // Arrow Element - Figma: "Arrow"
+  // Arrow Element
   .contact-arrow {
     display: none; // Hidden on mobile
     
@@ -91,30 +94,28 @@
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
-    margin-bottom: $spacing-xxl;
     position: relative;
 
     @media (min-width: $desktop) {
       flex-direction: row;
       align-items: flex-start;
-      gap: $spacing-xxl;
+      gap: 160px;
       width: 1015px;
-      height: 162px;
     }
 
     .contact-text-area {
       flex: 1;
 
       @media (min-width: $desktop) {
-        width: 504px; // Figma: "Some text"
+        width: 504px; 
       }
 
       .contact-intro {
         font-family: $font-primary; // Roboto Mono
         font-style: normal;
-        font-weight: 400; // Normal wie in Figma
+        font-weight: 400; // Normal 
         font-size: 16px; // Mobile
-        line-height: 120%; // Wie in Figma
+        line-height: 120%;
         color: var(--color-green);
         text-align: left;
         margin: 0;
@@ -124,7 +125,7 @@
         }
         
         @media (min-width: $desktop) {
-          font-size: 18px; // Wie in Figma "Some text"
+          font-size: 18px;
           text-align: justify;
           width: 504px;
           height: 73px;
@@ -135,38 +136,47 @@
     .contact-info-area {
       display: flex;
       flex-direction: column;
-      gap: $spacing-lg;
+      gap: $spacing-xs;
       align-items: flex-start;
+      justify-content: center;
 
       @media (min-width: $desktop) {
-        width: 412px; // Figma: "Contact Tel. Web" width
-        gap: $spacing-xl;
+        width: 412px; 
+        gap: $spacing-xs;
+        justify-content: flex-start;
       }
 
       @media (max-width: 1023px) {
         align-items: center;
         margin-top: $spacing-lg;
+        gap: $spacing-xl;
       }
 
       .contact-item {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: $spacing-md;
+        gap: $spacing-sm;
         width: 100%;
+        text-align: center;
 
         @media (min-width: $desktop) {
-          height: 32px; // Figma: Frame height
+          flex-direction: row;
+          align-items: center;
+          gap: $spacing-md;
+          text-align: left;
+          height: 32px;
           position: relative;
         }
 
-        // Email Item - Figma: "Contact Email Web"
+        // Email Item
         &:first-child {
           @media (min-width: $desktop) {
             height: 30px;
           }
         }
 
-        // Phone Item - Figma: "Contact Tel. Web"
+        // Phone Item
         &:last-child {
           @media (min-width: $desktop) {
             height: 33px;
@@ -182,7 +192,7 @@
           flex-shrink: 0;
 
           @media (min-width: $desktop) {
-            width: 28px; // Figma: icon size
+            width: 28px;
             height: 30px;
           }
 
@@ -202,6 +212,7 @@
           display: flex;
           flex-direction: column;
           gap: 4px;
+          align-items: center;
 
           @media (min-width: $desktop) {
             flex-direction: row;
@@ -210,6 +221,7 @@
           }
 
           .contact-label {
+            display: none;
             font-family: $font-primary;
             font-style: normal;
             font-weight: 500;
@@ -218,6 +230,7 @@
             line-height: 120%;
             
             @media (min-width: $desktop) {
+              display: block;
               font-size: 16px;
             }
           }
@@ -234,7 +247,7 @@
             white-space: nowrap;
 
             @media (min-width: $desktop) {
-              font-size: 20px; // Figma: "Tel: 0157 123 456 68" & "E-mail"
+              font-size: 20px; 
             }
 
             &:hover,
@@ -249,7 +262,7 @@
   }
 }
 
-// Contact Form - Version 1 Clean Design
+// Contact Form
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -303,14 +316,14 @@
 
     input, textarea {
       background: transparent;
-      border: 1.5px solid var(--color-green); // Wie in Figma "border: 1.5px solid"
-      border-radius: 0; // Figma zeigt eckige Rahmen ohne border-radius
+      border: 1.5px solid var(--color-green); 
+      border-radius: 0; 
       padding: 12px 45px 12px 16px; // Right padding for icon space
       font-family: $font-primary; // Roboto Mono
       font-style: normal;
       font-weight: 400;
-      font-size: 14px; // Kleiner für sehr kleine Bildschirme
-      line-height: 120%; // Wie in Figma
+      font-size: 14px;
+      line-height: 120%; 
       color: var(--color-green);
       transition: all 0.2s ease;
       width: 100%;
@@ -369,7 +382,7 @@
       }
 
       @media (min-width: $desktop) {
-        font-size: 18px; // Größer für Desktop
+        font-size: 18px; 
         padding: 15px 50px 15px 25px;
         
         &::placeholder {
@@ -389,7 +402,7 @@
       }
 
       @media (min-width: $desktop) {
-        min-height: 180px;
+        min-height: 139px;
       }
     }
 
@@ -435,7 +448,7 @@
       .form-group {
         textarea {
           @media (min-width: $desktop) {
-            min-height: 200px; // Höher um mit den beiden linken Feldern zu matchen
+            height: 139px;
           }
         }
       }
@@ -466,12 +479,12 @@
       font-style: normal;
       font-weight: 400;
       font-size: 12px; // Mobile
-      line-height: 120%; // Wie in Figma
+      line-height: 120%;
       color: var(--color-green);
       cursor: pointer;
 
       @media (min-width: $desktop) {
-        font-size: 14px; // Wie in Figma "Privacy policy text"
+        font-size: 14px;
       }
       
       ::ng-deep a {
@@ -560,13 +573,13 @@
     padding: 12px 20px; // Mobile: Smaller padding
     background: var(--color-red);
     color: var(--color-white);
-    border: 1.5px solid var(--color-red); // Gleiche Border-Stärke wie Input-Felder
-    border-radius: 0; // Figma zeigt eckige Rahmen ohne border-radius
+    border: 1.5px solid var(--color-red);
+    border-radius: 0; 
     font-family: $font-primary; // Roboto Mono
     font-style: normal;
     font-weight: 500;
     font-size: 14px; // Mobile: Smaller font
-    line-height: 120%; // Wie in Figma
+    line-height: 120%; 
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: $spacing-lg;
@@ -584,13 +597,13 @@
     }
     
     @media (min-width: $desktop) {
-      font-size: 18px; // Größer für Desktop
+      font-size: 18px;
     }
 
     &:hover:not(:disabled) {
       background: transparent;
       color: var(--color-red);
-      border: 1.5px solid var(--color-red); // Konsistente Border-Stärke
+      border: 1.5px solid var(--color-red);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(225, 85, 68, 0.3);
     }

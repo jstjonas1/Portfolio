@@ -13,10 +13,10 @@
   "whyMe": {
     "title": "Warum ich",
     "description": "Technik war immer meine Leidenschaft. Durch meine Lösungsorientierung und Kreativität, bringe ich die perfekten Eigenschaften für den Beruf mit. Immer auf der Suche nach neuen Herausforderungen. Mein Lebenslauf ist das Zeugnis meiner Neugier und Zielstrebigkeit.",
-    "iAm": "I am",
-    "location": "located <br>in Berlin",
-    "relocation": "open to <br>relocate",
-    "remote": "open for <br>remote work",
+    "iAm": "Ich bin",
+    "location": "in Berlin <br>ansässig",
+    "relocation": "offen für <br>Umzug",
+    "remote": "offen für <br>Remote-Arbeit",
     "button": "Kontaktiere mich"
   },
   "skills": {

@@ -3,8 +3,8 @@
     "id": "join",
     "image": "assets/img/projects/join.png",
     "translationKey": "join",
-    "githubUrl": "https://github.com/yourusername/join",
-    "liveUrl": "https://join-demo.example.com",
+    "githubUrl": "https://github.com/jstjonas1/Join",
+    "liveUrl": "https://jonasstegner.de/join",
     "order": 1
   },
   {
